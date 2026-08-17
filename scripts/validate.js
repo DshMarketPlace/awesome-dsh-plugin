@@ -158,7 +158,17 @@ function validateCuratedList() {
   }
 
   console.log(`✓ Total plugins: ${totalPlugins}`);
-  console.log(`✓ Unique repos: ${seenRepos.size}`);
+
+  // Calculate actual unique plugins
+  const uniqueInCategories = seenRepos.size;
+  const uniqueInStarter = starterRepos.size;
+  const starterAlsoInCategories = [...starterRepos].filter(r => seenRepos.has(r)).length;
+  const totalUnique = uniqueInCategories + uniqueInStarter - starterAlsoInCategories;
+
+  console.log(`✓ Unique plugins in categories: ${uniqueInCategories}`);
+  console.log(`✓ Unique plugins in starter: ${uniqueInStarter}`);
+  console.log(`✓ Starter also in categories: ${starterAlsoInCategories}`);
+  console.log(`✓ Total unique plugins across both: ${totalUnique}`);
 
   // Check recommended range
   if (totalPlugins < 50) {
@@ -188,6 +198,7 @@ async function validateWithMarketplace(allRepos) {
   let notFound = 0;
   let notInstallable = 0;
   let installFailed = 0;
+  const issues = [];
 
   allRepos.forEach(({ repo, subpath, location }) => {
     const fullName = subpath ? `${repo}#${subpath}` : repo;
@@ -195,24 +206,27 @@ async function validateWithMarketplace(allRepos) {
 
     if (!meta) {
       console.error(`✗ Plugin not found in marketplace: ${fullName} (${location})`);
+      issues.push({ type: 'not_found', plugin: fullName, location });
       notFound++;
       return;
     }
 
-    // Check installability
+    // Check installability - now treated as error
     if (meta.installable === false) {
-      console.warn(`⚠ Plugin not installable: ${fullName} (${location})`);
+      console.error(`✗ Plugin not installable: ${fullName} (${location})`);
+      issues.push({ type: 'not_installable', plugin: fullName, location });
       notInstallable++;
     }
 
     // Check install validation status
     if (meta.installCheck === 'failed') {
       console.error(`✗ Plugin install check failed: ${fullName} (${location})`);
+      issues.push({ type: 'install_failed', plugin: fullName, location });
       installFailed++;
     }
   });
 
-  const hasCriticalErrors = notFound > 0 || installFailed > 0;
+  const hasCriticalErrors = notFound > 0 || notInstallable > 0 || installFailed > 0;
 
   console.log(`\n📊 Marketplace validation results:`);
   console.log(`  - Found in marketplace: ${allRepos.length - notFound}/${allRepos.length}`);

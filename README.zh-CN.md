@@ -59,9 +59,9 @@ dsh plugin --profile web add dshmarketplace-plugin
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams 多智能体团队。 ★0.4k · [详情](https://dshmarketplace.dev/plugins/nanmicoder-dsh-agent-teams)
 - [treg](https://github.com/superdesigndev/treg) — 给 Agent 的工具目录：按「要做的事」检索约 2,600 个外部接口（SEO 与 SERP、外链、社交、人物与公司信息补全、广告库、抓取），查看参数与单次调用价格后直接调用，凭据由服务端注入。附带技能，MCP 行在未设置 TREG_TOKEN 前保持禁用。 ★0.4k · [详情](https://dshmarketplace.dev/plugins/superdesigndev-treg)
 - [vox-director](https://github.com/Alisa0808/vox-director) — Turn one topic into a finished Vox-style paper-collage explainer/ad video — automated end to end on Atlas Cloud + ffmpeg. An agent skill. ★1.3k
-- [modlens](https://github.com/liustack/modlens) — 为纯文本模型架起视觉桥梁：粘贴图片，输出结构化 JSON 证据（OCR、版面、语义）。 ★2.3k · [详情](https://dshmarketplace.dev/plugins/liustack-modlens)
+- [modlens](https://github.com/liustack/modlens) — 为纯文本型架起视觉桥梁：粘贴图片，输出结构化 JSON 证据（OCR、版面、语义）。 ★2.3k · [详情](https://dshmarketplace.dev/plugins/liustack-modlens)
 - [dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) — Claude Code 风格全屏终端 UI：像素鲸鱼顶栏、实时工作状态行、思考流式展开。 ★1.5k · [详情](https://dshmarketplace.dev/plugins/ccch1mneyyy-dsh-tui)
-- [Aegis](https://github.com/GanyuanRan/Aegis) — 面向编码 Agent 的软件工程方法包，提供基线优先���划、系统化调试、提示词卫生、完成前验证，以及修复/退役双轨跟踪技能。 ★1k · [详情](https://dshmarketplace.dev/plugins/ganyuanran-aegis)
+- [Aegis](https://github.com/GanyuanRan/Aegis) — 面向编码 Agent 的软件工程方法包，提供基线优先规划、系统化调试、提示词卫生、完成前验证，以及修复/退役双轨跟踪技能。 ★1k · [详情](https://dshmarketplace.dev/plugins/ganyuanran-aegis)
 
 ---
 
@@ -87,7 +87,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 
 - [engramory](https://github.com/tinqiao-oss/engramory) — 把 Engramory 策展式记忆纪律做成可安装插件（[npm: dsh-engramory](https://www.npmjs.com/package/dsh-engramory)）：通过 `ctx.tools.guard()` 对 `MEMORY.md` 索引施加确定性的 200 行 / 25KB 上限（增长即拒、缩小的重写一律放行），并把协议注册为运行时 skill。记忆库是纯 markdown、一条事实一个文件，与 Claude Code、Codex、Kiro、OpenClaw 共用。 ★0.2k · [详情](https://dshmarketplace.dev/plugins/tinqiao-oss-engramory)
 - [dsh-memory-evolve](https://github.com/csyangwen/dsh-memory-evolve) — 为 DeepSeek Harness 带来「跨会话长期记忆 + 后台自我进化」能力的纯插件实现：五轨记忆 · git 分支感知 · 回合内自我审查 · 技能自我进化与技能管理器 · 四轨待办 · COI 调度 · 会话广播 · 会话搜索 · 提示词管理器 · 临时信息便签——零核心修改、零运行时依赖，随装随用、卸载即净。 ★0.1k
-- [dsh-context](https://github.com/bowenliang123/dsh-context) — 上下文洞察面板：一眼看清模型上下文窗口的组成与变化——构成对照窗口大小、按请求历史趋势、压缩/注入事件、消息级 token 统计。 ★0.1k
+- [dsh-context](https://github.com/bowenliang123/dsh-context) — 上下文洞察面板：一眼看清模型上下文窗口的组成与变化——构成对照窗口大小、按请求史趋势、压缩/注入事件、消息级 token 统计。 ★0.1k
 - [dsh-noema](https://github.com/ZSeven-W/dsh-noema) — Noema long-term memory plugin for DSH: durable, inspectable agent memory with recall tools and a settings page. ★0.1k
 - [Co-Engram](https://github.com/Co-Engram/Co-Engram) — 自进化团队记忆，以纯 Markdown 存于 Git：原生 Cordis 插件注册 38 个裸名记忆工具，并按每次组装动态注入 prompt-signals 段；含 RPE 强化、衰减与睡眠巩固；与 Claude Code（MCP）、OpenClaw 宿主共享同一数据仓；已对 DSH 0.1.0-rc.6 实测。 ★0.1k
 
@@ -101,7 +101,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 
 ### Vision & Multimodal
 
-- [modlens](https://github.com/liustack/modlens) — 为纯文本模型架起视觉桥梁：粘贴图片，输出结构化 JSON 证据（OCR、版面、语义）。 ★2.3k · [详情](https://dshmarketplace.dev/plugins/liustack-modlens)
+- [modlens](https://github.com/liustack/modlens) — 为纯文本型架起视觉桥梁：粘贴图片，输出结构化 JSON 证据（OCR、版面、语义）。 ★2.3k · [详情](https://dshmarketplace.dev/plugins/liustack-modlens)
 - [agent-vision-toolkit](https://github.com/Anionex/agent-vision-toolkit) — 为纯文本模型"看图“设计更好的视觉工具箱和技能，支持多图理解，图片问答，前端UI还原、GUI 自动化等，并可选无缝接入多个主流agent，直接识别粘贴图片｜ A vision toolkit and skill designed for text-only llms — image Q&A, long-screenshot OCR, frontend UI restoration, and GUI automation, with optional seamless integration for Codex, Claude Code, Pi, Oh My Pi, and OpenCode ★1k
 - [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) — 让纯文本模型更好地做视觉任务：带意图的图片问答、长截图 OCR、UI 还原等。 ★0.6k · [详情](https://dshmarketplace.dev/plugins/anionex-dsh-vision-toolkit)
 - [dsh-vision-router](https://github.com/ysr666/dsh-vision-router) — 为纯文本 Agent 提供视觉能力：内置免 Key 视觉链 + 像素级视觉工具（看图问答、定位、裁剪、像素对比、取色、OCR、矢量化、抠图、截图）；粘贴图片即可用。 ★0.4k · [详情](https://dshmarketplace.dev/plugins/ysr666-dsh-vision-router)
@@ -118,7 +118,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 ### Skills
 
 - [vox-director](https://github.com/Alisa0808/vox-director) — Turn one topic into a finished Vox-style paper-collage explainer/ad video — automated end to end on Atlas Cloud + ffmpeg. An agent skill. ★1.3k
-- [Aegis](https://github.com/GanyuanRan/Aegis) — 面向编码 Agent 的软件工程方法包，提供基线优先���划、系统化调试、提示词卫生、完成前验证，以及修复/退役双轨跟踪技能。 ★1k · [详情](https://dshmarketplace.dev/plugins/ganyuanran-aegis)
+- [Aegis](https://github.com/GanyuanRan/Aegis) — 面向编码 Agent 的软件工程方法包，提供基线优先规划、系统化调试、提示词卫生、完成前验证，以及修复/退役双轨跟踪技能。 ★1k · [详情](https://dshmarketplace.dev/plugins/ganyuanran-aegis)
 - [superdesign-skill](https://github.com/superdesigndev/superdesign-skill) — 在 Superdesign 画布上做 UI 与营销图的设计技能：先读代码库拿上下文、抽取现有设计系统，再通过 Superdesign CLI 生成并迭代可分支的设计稿、流程页与可复用组件。 ★0.4k · [详情](https://dshmarketplace.dev/plugins/superdesigndev-superdesign-skill)
 - [MisakaNet](https://github.com/Ikalus1988/MisakaNet) — 失败恢复记忆库：从真实工程会话中搜索和记录失败恢复教训，支持 BM25 + 语义 RAG 检索和知识库管理。 ★0.4k · [详情](https://dshmarketplace.dev/plugins/ikalus1988-misakanet)
 - [Awesome-AI-Pedia](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia) — AI skills大全 mcp ai知识库 Agent 全维度 AI 资源百科，DSH插件 收录大模型、智能 Agent、RAG 检索增强、多模态、MLOps、AI 应用工具、AI面试集、Vibe coding 大全、零基础学习路线，持续更新前沿 AI 开源项目，开发者一站式 AI 导航库 ★0.2k
@@ -145,9 +145,9 @@ dsh plugin --profile web add dshmarketplace-plugin
 
 ### Development
 
-- [oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) — 社区发行版：TUI、桌面端与 Web UI 统一体验，分层安装、一步到位。 ★0.2k · [详情](https://dshmarketplace.dev/plugins/hust-open-atom-club-oh-dsh)
+- [oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) — 社发行版：TUI、桌面端与 Web UI 统一体验，分层安装、一步到位。 ★0.2k · [详情](https://dshmarketplace.dev/plugins/hust-open-atom-club-oh-dsh)
 - [forkprobe](https://github.com/Jayden-X-L/forkprobe) — 同一任务并行试跑多个技能，对比结果选出最优。 ★0.1k
-- [plugin-registry](https://github.com/vlln/plugin-registry) — 插件生态基建���浏览器面板管理官方 repository 插件（0 patch）+ make-dsh-plugin 插件开发引导技能。 ★0.1k
+- [plugin-registry](https://github.com/vlln/plugin-registry) — 插件生态基建：浏览器面板管理官方 repository 插件（0 patch）+ make-dsh-plugin 插件开发引导技能。 ★0.1k
 - [dsh-multica-runtime](https://github.com/forrestchang/dsh-multica-runtime) — 让 dsh 运行时跑在 Multica 上。 ★0k
 
 ### Fun & Experimental

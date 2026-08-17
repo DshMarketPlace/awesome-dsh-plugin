@@ -40,13 +40,36 @@ async function fetchPluginData() {
 
 // Load cached data or fetch new
 async function loadPluginData() {
+  // Always use cache if it exists and is recent (within 24 hours)
+  if (fs.existsSync(CACHE_FILE)) {
+    const stats = fs.statSync(CACHE_FILE);
+    const ageHours = (Date.now() - stats.mtimeMs) / 1000 / 60 / 60;
+
+    if (ageHours < 24) {
+      console.log(`✓ Using cached data (${Math.round(ageHours)}h old)`);
+      const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
+      const plugins = cached.results || cached.plugins || cached;
+      const total = cached.total || plugins.length;
+      return {
+        plugins: Array.isArray(plugins) ? plugins : [],
+        total
+      };
+    }
+  }
+
+  // Fetch new data only if cache is missing or stale
   try {
-    const data = await fetchPluginData();
-    console.log(`✓ Fetched ${data.plugins.length} plugins from marketplace API (total indexed: ${data.total})`);
-    return data;
+    const response = await fetchPluginData();
+    const plugins = response.results || response.plugins || response;
+    const total = response.total || plugins.length;
+    console.log(`✓ Fetched ${plugins.length} plugins from marketplace API (total indexed: ${total})`);
+    return { plugins, total };
   } catch (error) {
-    console.warn(`⚠ Failed to fetch from API, using cache: ${error.message}`);
+    console.warn(`⚠ Failed to fetch from API: ${error.message}`);
+
+    // Fall back to cache even if stale
     if (fs.existsSync(CACHE_FILE)) {
+      console.log('Using stale cache as fallback');
       const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
       const plugins = cached.results || cached.plugins || cached;
       const total = cached.total || plugins.length;
@@ -57,6 +80,16 @@ async function loadPluginData() {
     }
     throw new Error('No cache available and API fetch failed');
   }
+}
+
+// Sanitize text to remove invalid characters
+function sanitizeText(text) {
+  if (!text) return '';
+  // Remove replacement characters and other problematic Unicode
+  return text
+    .replace(/�/g, '') // Remove � (replacement character)
+    .replace(/[\x00-\x08\x0B-\x0C\x0E-\x1F\x7F]/g, '') // Remove control characters
+    .trim();
 }
 
 // Find plugin metadata by repo (string or object format)
@@ -89,7 +122,7 @@ function generatePluginEntry(repoOrPlugin, marketplaceData) {
   const name = meta.name;
   const githubUrl = meta.repoUrl || `https://github.com/${meta.fullName}`;
   const marketplaceUrl = meta.url;
-  const summary = meta.summary || '';
+  const summary = sanitizeText(meta.summary || '');
   const stars = meta.stars ? `★${Math.round(meta.stars / 1000 * 10) / 10}k` : '';
 
   let entry = `- [${name}](${githubUrl})`;
@@ -116,7 +149,7 @@ function generatePluginEntryZh(repoOrPlugin, marketplaceData) {
   const name = meta.name;
   const githubUrl = meta.repoUrl || `https://github.com/${meta.fullName}`;
   const marketplaceUrl = meta.url;
-  const summary = meta.summaryZh || meta.summary || '';
+  const summary = sanitizeText(meta.summaryZh || meta.summary || '');
   const stars = meta.stars ? `★${Math.round(meta.stars / 1000 * 10) / 10}k` : '';
 
   let entry = `- [${name}](${githubUrl})`;
@@ -194,11 +227,13 @@ Essential plugins recommended for new DSH users:
 
   // Add starter pack
   let starterCount = 0;
+  let detailsCount = 0;
   curated.starter.forEach(repo => {
     const entry = generatePluginEntry(repo, marketplaceData);
     if (entry) {
       content += entry + '\n';
       starterCount++;
+      if (entry.includes('[Details]')) detailsCount++;
     }
   });
 
@@ -215,6 +250,7 @@ Essential plugins recommended for new DSH users:
       if (entry) {
         content += entry + '\n';
         categoryCount++;
+        if (entry.includes('[Details]')) detailsCount++;
       }
     });
 
@@ -251,7 +287,7 @@ To the extent possible under law, DSH Marketplace has waived all copyright and r
   fs.writeFileSync(README_EN, content, 'utf8');
   console.log(`✓ Generated ${README_EN}`);
 
-  return { starterCount, totalCategoryPlugins };
+  return { starterCount, totalCategoryPlugins, detailsCount };
 }
 
 // Generate Chinese README
@@ -315,11 +351,13 @@ dsh plugin --profile web add dshmarketplace-plugin
 
   // Add starter pack
   let starterCount = 0;
+  let detailsCount = 0;
   curated.starter.forEach(repo => {
     const entry = generatePluginEntryZh(repo, marketplaceData);
     if (entry) {
       content += entry + '\n';
       starterCount++;
+      if (entry.includes('[详情]')) detailsCount++;
     }
   });
 
@@ -336,6 +374,7 @@ dsh plugin --profile web add dshmarketplace-plugin
       if (entry) {
         content += entry + '\n';
         categoryCount++;
+        if (entry.includes('[详情]')) detailsCount++;
       }
     });
 
@@ -372,7 +411,7 @@ dsh plugin --profile web add dshmarketplace-plugin
   fs.writeFileSync(README_ZH, content, 'utf8');
   console.log(`✓ Generated ${README_ZH}`);
 
-  return { starterCount, totalCategoryPlugins };
+  return { starterCount, totalCategoryPlugins, detailsCount };
 }
 
 // Main
@@ -385,11 +424,22 @@ dsh plugin --profile web add dshmarketplace-plugin
     const enStats = generateReadmeEN(data);
     const zhStats = generateReadmeZH(data);
 
+    // Calculate unique plugins
+    const curated = yaml.load(fs.readFileSync(DATA_FILE, 'utf8'));
+    const categoryRepos = new Set();
+    curated.categories.forEach(cat => {
+      cat.plugins.forEach(p => {
+        const key = (typeof p === 'string') ? p : (p.subpath ? `${p.repo}#${p.subpath}` : p.repo);
+        categoryRepos.add(key);
+      });
+    });
+
     console.log(`\n📊 Statistics:`);
-    console.log(`  - Marketplace plugins: ${data.total}`);
-    console.log(`  - Curated plugins: ${enStats.totalCategoryPlugins} unique in categories`);
-    console.log(`  - Starter pack: ${enStats.starterCount} rendered`);
+    console.log(`  - Marketplace total: ${data.total}`);
+    console.log(`  - Curated unique: ${categoryRepos.size}`);
+    console.log(`  - Starter pack: ${enStats.starterCount}`);
     console.log(`  - Categories: ${curated.categories.length}`);
+    console.log(`  - With Details links: ${enStats.detailsCount} (${Math.round(enStats.detailsCount/categoryRepos.size*100)}%)`);
 
     console.log('\n✅ Done!');
   } catch (error) {
