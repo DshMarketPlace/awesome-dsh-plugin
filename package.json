@@ -1,0 +1,32 @@
+{
+  "name": "awesome-dsh-plugin",
+  "version": "1.0.0",
+  "description": "A curated list of useful plugins for DeepSeek Harness",
+  "scripts": {
+    "generate": "node scripts/generate-readme.js",
+    "validate": "node scripts/validate.js",
+    "test": "npm run validate && npm run generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DshMarketPlace/awesome-dsh-plugin.git"
+  },
+  "keywords": [
+    "awesome",
+    "awesome-list",
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "dsh-plugins",
+    "agent",
+    "ai-agent",
+    "plugins",
+    "developer-tools"
+  ],
+  "author": "DSH Marketplace",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

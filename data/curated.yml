@@ -1,0 +1,128 @@
+# Curated DSH Plugins
+# This file contains the selection of plugins to be featured in the Awesome list
+# Metadata is fetched from DSH Marketplace API
+
+# Starter Pack - repos to highlight as "essential"
+# These should also appear in categories below
+starter:
+  - ZASENJC/dsh-plugins-store
+  - omdsh-dev/DSH-better-sidebar
+  - Anionex/dsh-vision-toolkit
+  - tinqiao-oss/engramory
+  - dsh-market/dsh-market
+  - NanmiCoder/dsh-agent-teams
+  - superdesigndev/treg
+  - Alisa0808/vox-director
+  - liustack/modlens
+  - sandbaseai/sandbase-harness
+
+# Categorized plugins
+categories:
+  - name: UI & Experience
+    slug: ui
+    plugins:
+      - repo: omdsh-dev/DSH-better-sidebar
+      - repo: ccch1mneyyy/dsh-TUI
+      - repo: omdsh-dev/dsh-at-file
+      - repo: huiliyi37/dsh-tianshu-tui
+      - repo: Nagi-ovo/dsh-visualize
+      - repo: zhu1090093659/dsh-web-ui
+        subpath: packages/dsh-web-ui-all
+
+  - name: Models & Providers
+    slug: model
+    plugins:
+      - repo: sandbaseai/sandbase-harness
+      - repo: NanmiCoder/dsh-auto-mode
+      - repo: anysearch-team/anysearch-dsh
+      - repo: HanaAyane/dsh-reasoning-effort
+      - repo: AITabby/dockyard-dsh
+
+  - name: Memory
+    slug: memory
+    plugins:
+      - repo: tinqiao-oss/engramory
+      - repo: csyangwen/dsh-memory-evolve
+      - repo: bowenliang123/dsh-context
+      - repo: volcengine/OpenViking
+        subpath: examples/dsh-memory-plugin
+      - repo: vectorize-io/hindsight
+        subpath: coding-agents
+
+  - name: Tools & Capabilities
+    slug: tools
+    plugins:
+      - repo: superdesigndev/treg
+      - repo: Lum1104/dsh-browser
+      - repo: zhaoolee/notes
+      - repo: liustack/modsearch
+      - repo: taxueseek/argo
+
+  - name: Vision & Multimodal
+    slug: vision
+    plugins:
+      - repo: liustack/modlens
+      - repo: Anionex/agent-vision-toolkit
+      - repo: Anionex/dsh-vision-toolkit
+      - repo: ysr666/dsh-vision-router
+      - repo: william-jin-cmu/dsh-vision
+
+  - name: Workflow & Automation
+    slug: workflow
+    plugins:
+      - repo: NanmiCoder/dsh-agent-teams
+      - repo: Tabbit-Browser/dsh-plugin
+      - repo: icetomoyo/dsh_workflow
+      - repo: btspoony/mstar-harness
+      - repo: titanwings/dsh-automation
+
+  - name: Skills
+    slug: skill
+    plugins:
+      - repo: Alisa0808/vox-director
+      - repo: GanyuanRan/Aegis
+      - repo: superdesigndev/superdesign-skill
+      - repo: Ikalus1988/MisakaNet
+      - repo: Awesome-AI-Pedia/Awesome-AI-Pedia
+
+  - name: Sessions
+    slug: session
+    plugins:
+      - repo: Anionex/dsh-turn-rewind
+      - repo: eri64/dsh-claude-ux
+      - repo: Nwflower/dsh-chat-import
+      - repo: Chinesezjc/dsh-interconnect
+
+  - name: Theme & Appearance
+    slug: theme
+    plugins:
+      - repo: WYH66666666/DSH-Transparent-UI-Plugin
+      - repo: kingOfSoySauce/dsh-liang-skin
+      - repo: GGBond2424648901/deep-whale-day-night-theme
+      - repo: RevolutionLA/dsh-dream-skin
+      - repo: Small-tailqwq/dsh-deep-whale
+        subpath: maid-atelier
+
+  - name: Plugin Managers & Marketplaces
+    slug: market
+    plugins:
+      - repo: dsh-market/dsh-market
+      - repo: bradeGithub/DSH-Plugins-Marketplace
+      - repo: ZASENJC/dsh-plugins-store
+      - repo: Sanqi-normal/dsh-webui-market-plugin
+
+  - name: Development
+    slug: dev
+    plugins:
+      - repo: hust-open-atom-club/oh-dsh
+      - repo: Jayden-X-L/forkprobe
+      - repo: vlln/plugin-registry
+      - repo: forrestchang/dsh-multica-runtime
+      - repo: strukto-ai/mirage
+        subpath: dsh
+
+  - name: Fun & Experimental
+    slug: fun
+    plugins:
+      - repo: Nagi-ovo/dsh-ads
+      - repo: vlln/whale-girl
