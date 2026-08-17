@@ -5,16 +5,16 @@
 # Starter Pack - repos to highlight as "essential"
 # These should also appear in categories below
 starter:
-  - ZASENJC/dsh-plugins-store
+  - dsh-market/dsh-market
   - omdsh-dev/DSH-better-sidebar
   - Anionex/dsh-vision-toolkit
   - tinqiao-oss/engramory
-  - dsh-market/dsh-market
   - NanmiCoder/dsh-agent-teams
   - superdesigndev/treg
   - Alisa0808/vox-director
   - liustack/modlens
-  - sandbaseai/sandbase-harness
+  - ccch1mneyyy/dsh-TUI
+  - GanyuanRan/Aegis
 
 # Categorized plugins
 categories:
@@ -26,17 +26,15 @@ categories:
       - repo: omdsh-dev/dsh-at-file
       - repo: huiliyi37/dsh-tianshu-tui
       - repo: Nagi-ovo/dsh-visualize
-      - repo: zhu1090093659/dsh-web-ui
-        subpath: packages/dsh-web-ui-all
 
   - name: Models & Providers
     slug: model
     plugins:
-      - repo: sandbaseai/sandbase-harness
       - repo: NanmiCoder/dsh-auto-mode
       - repo: anysearch-team/anysearch-dsh
       - repo: HanaAyane/dsh-reasoning-effort
       - repo: AITabby/dockyard-dsh
+      - repo: Mars-Sea/dsh-commandcode-provider
 
   - name: Memory
     slug: memory
@@ -44,10 +42,8 @@ categories:
       - repo: tinqiao-oss/engramory
       - repo: csyangwen/dsh-memory-evolve
       - repo: bowenliang123/dsh-context
-      - repo: volcengine/OpenViking
-        subpath: examples/dsh-memory-plugin
-      - repo: vectorize-io/hindsight
-        subpath: coding-agents
+      - repo: ZSeven-W/dsh-noema
+      - repo: Co-Engram/Co-Engram
 
   - name: Tools & Capabilities
     slug: tools
@@ -56,7 +52,7 @@ categories:
       - repo: Lum1104/dsh-browser
       - repo: zhaoolee/notes
       - repo: liustack/modsearch
-      - repo: taxueseek/argo
+      - repo: lire1131/dsh-undo-plugin
 
   - name: Vision & Multimodal
     slug: vision
@@ -91,7 +87,6 @@ categories:
       - repo: Anionex/dsh-turn-rewind
       - repo: eri64/dsh-claude-ux
       - repo: Nwflower/dsh-chat-import
-      - repo: Chinesezjc/dsh-interconnect
 
   - name: Theme & Appearance
     slug: theme
@@ -100,15 +95,13 @@ categories:
       - repo: kingOfSoySauce/dsh-liang-skin
       - repo: GGBond2424648901/deep-whale-day-night-theme
       - repo: RevolutionLA/dsh-dream-skin
-      - repo: Small-tailqwq/dsh-deep-whale
-        subpath: maid-atelier
 
   - name: Plugin Managers & Marketplaces
     slug: market
     plugins:
       - repo: dsh-market/dsh-market
-      - repo: bradeGithub/DSH-Plugins-Marketplace
       - repo: ZASENJC/dsh-plugins-store
+      - repo: bradeGithub/DSH-Plugins-Marketplace
       - repo: Sanqi-normal/dsh-webui-market-plugin
 
   - name: Development
@@ -118,8 +111,6 @@ categories:
       - repo: Jayden-X-L/forkprobe
       - repo: vlln/plugin-registry
       - repo: forrestchang/dsh-multica-runtime
-      - repo: strukto-ai/mirage
-        subpath: dsh
 
   - name: Fun & Experimental
     slug: fun

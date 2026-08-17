@@ -3,8 +3,43 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
+const https = require('https');
 
 const DATA_FILE = path.join(__dirname, '../data/curated.yml');
+const CACHE_FILE = path.join(__dirname, '../data/marketplace-cache.json');
+
+// Fetch marketplace data for validation
+async function fetchMarketplaceData() {
+  return new Promise((resolve, reject) => {
+    https.get('https://dshmarketplace.dev/api/v1/plugins?limit=2500', (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(data);
+          const plugins = parsed.results || parsed.plugins || parsed;
+          resolve(plugins);
+        } catch (e) {
+          reject(e);
+        }
+      });
+    }).on('error', reject);
+  });
+}
+
+async function loadMarketplaceData() {
+  try {
+    return await fetchMarketplaceData();
+  } catch (error) {
+    console.warn(`⚠ Failed to fetch from API: ${error.message}`);
+    if (fs.existsSync(CACHE_FILE)) {
+      console.log('Using cached marketplace data');
+      const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
+      return cached.results || cached.plugins || cached;
+    }
+    return null; // Allow validation without network
+  }
+}
 
 function validateCuratedList() {
   console.log('🔍 Validating curated list...\n');
@@ -33,60 +68,96 @@ function validateCuratedList() {
   console.log(`✓ Found ${curated.categories.length} categories`);
 
   // Validate plugins
+  const starterRepos = new Set(curated.starter); // Starter repos to skip duplicate check
   const seenRepos = new Set();
+  const allRepos = [];
   let totalPlugins = 0;
+  let errors = 0;
 
-  function validateRepo(repo, location) {
+  function validateRepo(repo, location, isStarter = false) {
     if (typeof repo !== 'string') {
       console.error(`✗ Plugin in ${location} should be a string, got: ${typeof repo}`);
-      process.exit(1);
+      errors++;
+      return;
     }
 
     // Check repo format
     if (!repo.match(/^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/)) {
       console.error(`✗ Invalid repo format in ${location}: ${repo}`);
-      process.exit(1);
+      errors++;
+      return;
     }
 
-    seenRepos.add(repo);
+    // Only add to seenRepos for duplicate checking if not in starter
+    if (!isStarter) {
+      if (seenRepos.has(repo)) {
+        console.error(`✗ Duplicate plugin in ${location}: ${repo}`);
+        errors++;
+      }
+      seenRepos.add(repo);
+    }
+
+    allRepos.push({ repo, location });
     totalPlugins++;
   }
 
   function validatePlugin(plugin, location) {
     if (!plugin.repo) {
       console.error(`✗ Plugin in ${location} missing "repo" field`);
-      process.exit(1);
+      errors++;
+      return;
     }
 
     // Check repo format
     if (!plugin.repo.match(/^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/)) {
       console.error(`✗ Invalid repo format in ${location}: ${plugin.repo}`);
-      process.exit(1);
+      errors++;
+      return;
     }
 
     const key = plugin.subpath ? `${plugin.repo}#${plugin.subpath}` : plugin.repo;
-    seenRepos.add(key);
+
+    // Skip duplicate check if this repo is in starter pack
+    const isInStarter = starterRepos.has(plugin.repo) || starterRepos.has(key);
+
+    // Check for duplicates within categories only
+    if (!isInStarter && seenRepos.has(key)) {
+      console.error(`✗ Duplicate plugin in ${location}: ${key}`);
+      errors++;
+    }
+
+    if (!isInStarter) {
+      seenRepos.add(key);
+    }
+
+    allRepos.push({ repo: plugin.repo, subpath: plugin.subpath, location });
     totalPlugins++;
   }
 
   // Validate starter pack (string array)
   curated.starter.forEach((repo, idx) => {
-    validateRepo(repo, `starter[${idx}]`);
+    validateRepo(repo, `starter[${idx}]`, true);
   });
 
   // Validate categories
   curated.categories.forEach((category, catIdx) => {
     if (!category.name || !category.slug || !category.plugins) {
       console.error(`✗ Category ${catIdx} missing required fields (name, slug, plugins)`);
-      process.exit(1);
+      errors++;
+      return;
     }
 
     category.plugins.forEach((plugin, pluginIdx) => {
-      validatePlugin(plugin, `categories[${catIdx}].plugins[${pluginIdx}]`);
+      validatePlugin(plugin, `categories[${catIdx}].plugins[${pluginIdx}] (${category.name})`);
     });
   });
 
-  console.log(`✓ Total unique plugins: ${totalPlugins}`);
+  if (errors > 0) {
+    console.error(`\n✗ Found ${errors} error(s) in structure validation`);
+    process.exit(1);
+  }
+
+  console.log(`✓ Total plugins: ${totalPlugins}`);
   console.log(`✓ Unique repos: ${seenRepos.size}`);
 
   // Check recommended range
@@ -97,7 +168,80 @@ function validateCuratedList() {
     console.warn(`⚠ Plugin count (${totalPlugins}) is above recommended maximum (120)`);
   }
 
-  console.log('\n✅ Validation passed!');
+  console.log('\n✅ Structure validation passed!');
+  return { curated, allRepos };
 }
 
-validateCuratedList();
+// Cross-check with marketplace
+async function validateWithMarketplace(allRepos) {
+  console.log('\n🔍 Validating against marketplace data...\n');
+
+  const marketplaceData = await loadMarketplaceData();
+
+  if (!marketplaceData || marketplaceData.length === 0) {
+    console.log('⚠ Skipping marketplace validation (no data available)');
+    return true;
+  }
+
+  console.log(`✓ Loaded ${marketplaceData.length} plugins from marketplace`);
+
+  let notFound = 0;
+  let notInstallable = 0;
+  let installFailed = 0;
+
+  allRepos.forEach(({ repo, subpath, location }) => {
+    const fullName = subpath ? `${repo}#${subpath}` : repo;
+    const meta = marketplaceData.find(p => p.fullName === fullName || p.fullName === repo);
+
+    if (!meta) {
+      console.error(`✗ Plugin not found in marketplace: ${fullName} (${location})`);
+      notFound++;
+      return;
+    }
+
+    // Check installability
+    if (meta.installable === false) {
+      console.warn(`⚠ Plugin not installable: ${fullName} (${location})`);
+      notInstallable++;
+    }
+
+    // Check install validation status
+    if (meta.installCheck === 'failed') {
+      console.error(`✗ Plugin install check failed: ${fullName} (${location})`);
+      installFailed++;
+    }
+  });
+
+  const hasCriticalErrors = notFound > 0 || installFailed > 0;
+
+  console.log(`\n📊 Marketplace validation results:`);
+  console.log(`  - Found in marketplace: ${allRepos.length - notFound}/${allRepos.length}`);
+  console.log(`  - Not found: ${notFound}`);
+  console.log(`  - Not installable: ${notInstallable}`);
+  console.log(`  - Install check failed: ${installFailed}`);
+
+  if (hasCriticalErrors) {
+    console.error(`\n✗ Marketplace validation failed!`);
+    console.error(`Please remove plugins that are not found or have failed install checks.`);
+    process.exit(1);
+  }
+
+  if (notInstallable > 0) {
+    console.warn(`\n⚠ Warning: ${notInstallable} plugin(s) are not installable`);
+    console.warn(`Consider replacing them with installable alternatives.`);
+  }
+
+  console.log('\n✅ Marketplace validation passed!');
+  return true;
+}
+
+async function main() {
+  const { curated, allRepos } = validateCuratedList();
+  await validateWithMarketplace(allRepos);
+  console.log('\n✅ All validations passed!');
+}
+
+main().catch(error => {
+  console.error('\n❌ Validation failed:', error.message);
+  process.exit(1);
+});

@@ -4,7 +4,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Browse Marketplace](https://img.shields.io/badge/Browse-DSH%20Marketplace-blue?style=flat-square)](https://dshmarketplace.dev)
-[![Plugins](https://img.shields.io/badge/plugins-96+-success?style=flat-square)](https://dshmarketplace.dev)
+[![Plugins](https://img.shields.io/badge/plugins-2348+-success?style=flat-square)](https://dshmarketplace.dev)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 A curated list of useful plugins for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), maintained by [DSH Marketplace](https://dshmarketplace.dev).
@@ -17,7 +17,7 @@ A curated list of useful plugins for [DeepSeek Harness](https://github.com/deeps
 
 ## 🌟 Why This List Exists
 
-**DSH Marketplace** indexes the complete DeepSeek Harness plugin ecosystem — currently tracking 96+ plugins.
+**DSH Marketplace** indexes the complete DeepSeek Harness plugin ecosystem — currently tracking 2348+ plugins.
 
 This **Awesome List** is a curated subset: we hand-pick plugins worth trying first. Think of it as "the plugins you should actually install" rather than "every plugin that exists."
 
@@ -27,7 +27,7 @@ This **Awesome List** is a curated subset: we hand-pick plugins worth trying fir
 
 ### Browse the Full Marketplace
 
-Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 96+ indexed plugins with:
+Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 2348+ indexed plugins with:
 - Advanced search and filtering
 - Installation validation status
 - Detailed plugin pages
@@ -38,7 +38,7 @@ Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 96+ in
 Get the marketplace as a DSH plugin for in-app browsing and installation:
 
 ```bash
-dsh plugin --profile web add npm:dsh-plugins-store
+dsh plugin --profile web add dshmarketplace-plugin
 ```
 
 Then access it via:
@@ -52,15 +52,16 @@ Then access it via:
 
 Essential plugins recommended for new DSH users:
 
-- [dsh-plugins-store](https://github.com/ZASENJC/dsh-plugins-store) — 自动分类、收录和验证 DeepSeek-Harness 社区插件的市场。 Automatically categorize, curate, and validate the DeepSeek-Harness community plugin marketplace. ★0.1k
+- [dsh-market](https://github.com/dsh-market/dsh-market) — (Recommended) The plugin market inside DSH: a Settings page to browse and search the full community catalog by category, with confirmed one-click installs and an installed-plugins view. ★0.5k · [Details](https://dshmarketplace.dev/plugins/dsh-market-dsh-market)
 - [DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) — Full sidebar workbench with file rendering and editing, terminal, Git, and subagents; third-party plugins can register new tabs. ★1.6k · [Details](https://dshmarketplace.dev/plugins/omdsh-dev-dsh-better-sidebar)
 - [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) — Vision tasks for text-only models: intent-aware image Q&A, long-screenshot OCR, UI reproduction, grounding, and pixel diff. ★0.6k · [Details](https://dshmarketplace.dev/plugins/anionex-dsh-vision-toolkit)
 - [engramory](https://github.com/tinqiao-oss/engramory) — The Engramory curated-memory discipline as an installable plugin ([npm: dsh-engramory](https://www.npmjs.com/package/dsh-engramory)): a deterministic 200-line / 25 KB cap on the `MEMORY.md` index via `ctx.tools.guard()` — growth denied, a shrinking rewrite always passes — plus the protocol registered as a runtime skill. The store is plain markdown, one file per fact, shared with Claude Code, Codex, Kiro, and OpenClaw. ★0.2k · [Details](https://dshmarketplace.dev/plugins/tinqiao-oss-engramory)
-- [dsh-market](https://github.com/dsh-market/dsh-market) — (Recommended) The plugin market inside DSH: a Settings page to browse and search the full community catalog by category, with confirmed one-click installs and an installed-plugins view. ★0.5k · [Details](https://dshmarketplace.dev/plugins/dsh-market-dsh-market)
 - [dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) — AgentTeams multi-agent teams. ★0.4k · [Details](https://dshmarketplace.dev/plugins/nanmicoder-dsh-agent-teams)
 - [treg](https://github.com/superdesigndev/treg) — Tool catalog for agents: search ~2,600 external endpoints (SEO and SERP, backlinks, social, people and company enrichment, ad libraries, scraping) by the task you want done, read each one's parameters and per-call price, then call it with the credential injected server-side. Ships the skill plus an MCP row that stays disabled until TREG_TOKEN is set. ★0.4k · [Details](https://dshmarketplace.dev/plugins/superdesigndev-treg)
 - [vox-director](https://github.com/Alisa0808/vox-director) — Turn one topic into a finished Vox-style paper-collage explainer/ad video — automated end to end on Atlas Cloud + ffmpeg. An agent skill. ★1.3k
 - [modlens](https://github.com/liustack/modlens) — Vision bridge for text-only models: paste an image, get structured JSON evidence (OCR, layout, semantics). ★2.3k · [Details](https://dshmarketplace.dev/plugins/liustack-modlens)
+- [dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) — Claude Code-style full-screen terminal UI: pixel-whale header, live status line, and streaming thought expansion. ★1.5k · [Details](https://dshmarketplace.dev/plugins/ccch1mneyyy-dsh-tui)
+- [Aegis](https://github.com/GanyuanRan/Aegis) — Software-engineering method pack for coding agents, with skills for baseline-first planning, systematic debugging, prompt hygiene, verification before completion, and repair/retirement tracking. ★1k · [Details](https://dshmarketplace.dev/plugins/ganyuanran-aegis)
 
 ---
 
@@ -73,7 +74,6 @@ Essential plugins recommended for new DSH users:
 - [dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) — Codex-style `@file` mentions: search workspace files in the composer and attach their contents to prompts. ★0.3k · [Details](https://dshmarketplace.dev/plugins/omdsh-dev-dsh-at-file)
 - [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — A terminal UI (TUI) for DeepSeek Harness. ★0.2k
 - [dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize) — In-conversation generative UI: the model renders interactive HTML cards into the chat stream, with streaming preview and sandboxed rendering. ★0.2k · [Details](https://dshmarketplace.dev/plugins/nagi-ovo-dsh-visualize)
-- [dsh-web-ui-all](https://github.com/zhu1090093659/dsh-web-ui) — Plugin and skin collection for the DSH Web UI: task board, Git graph, right-side panel, remote mobile UI, pet, live token stats, and a skin center. ★3.7k · [Details](https://dshmarketplace.dev/plugins/zhu1090093659-dsh-web-ui-packages-dsh-web-ui-all)
 
 ### Models & Providers
 
@@ -81,14 +81,15 @@ Essential plugins recommended for new DSH users:
 - [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) — AnySearch web search provider and advanced search tools for DeepSeek Harness (DSH) ★0.1k
 - [dsh-reasoning-effort](https://github.com/HanaAyane/dsh-reasoning-effort) — DSH适用的Codex风格的思考强度滑块，以及大肥鱼跑步滑块。Codex-style model and reasoning-effort slider for DeepSeek Harness ★0.1k
 - [dockyard-dsh](https://github.com/AITabby/dockyard-dsh) — A macOS-only native account-pool and provider plugin for DeepSeek Harness. ★0.1k
+- [dsh-commandcode-provider](https://github.com/Mars-Sea/dsh-commandcode-provider) — Unofficial Command Code LLM provider: registers a `commandcode` route with a live model catalog and reasoning-effort support. ★0k · [Details](https://dshmarketplace.dev/plugins/mars-sea-dsh-commandcode-provider)
 
 ### Memory
 
 - [engramory](https://github.com/tinqiao-oss/engramory) — The Engramory curated-memory discipline as an installable plugin ([npm: dsh-engramory](https://www.npmjs.com/package/dsh-engramory)): a deterministic 200-line / 25 KB cap on the `MEMORY.md` index via `ctx.tools.guard()` — growth denied, a shrinking rewrite always passes — plus the protocol registered as a runtime skill. The store is plain markdown, one file per fact, shared with Claude Code, Codex, Kiro, and OpenClaw. ★0.2k · [Details](https://dshmarketplace.dev/plugins/tinqiao-oss-engramory)
 - [dsh-memory-evolve](https://github.com/csyangwen/dsh-memory-evolve) — 为 DeepSeek Harness 带来「跨会话长期记忆 + 后台自我进化」能力的纯插件实现：五轨记忆 · git 分支感知 · 回合内自我审查 · 技能自我进化与技能管理器 · 四轨待办 · COI 调度 · 会话广播 · 会话搜索 · 提示词管理器 · 临时信息便签——零核心修改、零运行时依赖，随装随用、卸载即净。 ★0.1k
 - [dsh-context](https://github.com/bowenliang123/dsh-context) — Context insight panel: see what the model's context window is made of and how it evolves — composition vs. window size, per-request history, compression/injection events, and per-message token stats. ★0.1k
-- [dsh-memory-plugin](https://github.com/volcengine/OpenViking) — OpenViking memory and context bundle for DeepSeek Harness: pre-step auto-recall and profile injection, session capture, `viking://` URI guarding, and recall/write memory tools backed by an OpenViking server. ★28.6k · [Details](https://dshmarketplace.dev/plugins/volcengine-openviking-examples-dsh-memory-plugin)
-- [coding-agents](https://github.com/vectorize-io/hindsight) — Hindsight, agent memory that learns: long-term project memory with auto recall and retain, knowledge pages, deep reflection, and per-repo memory banks. ★20k · [Details](https://dshmarketplace.dev/plugins/vectorize-io-hindsight-coding-agents)
+- [dsh-noema](https://github.com/ZSeven-W/dsh-noema) — Noema long-term memory plugin for DSH: durable, inspectable agent memory with recall tools and a settings page. ★0.1k
+- [Co-Engram](https://github.com/Co-Engram/Co-Engram) — Self-evolving team memory as plain Markdown in git: a native Cordis plugin that registers 38 bare-name memory tools plus a prompt-signals section re-evaluated at every assembly, with RPE reinforcement, decay and sleep consolidation; shares one data repo with its Claude Code (MCP) and OpenClaw hosts; verified against DSH 0.1.0-rc.6. ★0.1k
 
 ### Tools & Capabilities
 
@@ -96,7 +97,7 @@ Essential plugins recommended for new DSH users:
 - [dsh-browser](https://github.com/Lum1104/dsh-browser) — Chrome sidebar extension that lets DSH operate your browser directly, no vision capabilities required. ★0.2k · [Details](https://dshmarketplace.dev/plugins/lum1104-dsh-browser)
 - [notes](https://github.com/zhaoolee/notes) — Export DSH conversations as Smartisan Notes-style PNGs, or create and update Markdown notes in a configured account-scoped workspace. ★0.1k · [Details](https://dshmarketplace.dev/plugins/zhaoolee-notes)
 - [modsearch](https://github.com/liustack/modsearch) — Web search bridge for text-only agents: ask the web or X, get structured JSON evidence (search, fetch, citations). ★0.1k
-- [argo](https://github.com/taxueseek/argo) — Search built for agents: multilingual coverage across web, academic, code, shopping, finance, news, and encyclopedias. ★0.1k
+- [dsh-undo-plugin](https://github.com/lire1131/dsh-undo-plugin) — Undo/redo & rollback system for DSH: every config change is auto-snapshotted; undo/redo/restore to any version from the WebUI or the offline CLI/GUI tools (works even when DSH fails to boot). ★0.1k
 
 ### Vision & Multimodal
 
@@ -134,13 +135,12 @@ Essential plugins recommended for new DSH users:
 - [dsh-liang-skin](https://github.com/kingOfSoySauce/dsh-liang-skin) — DeepSeek Harness 滑动变阻器皮肤 ★0.1k
 - [deep-whale-day-night-theme](https://github.com/GGBond2424648901/deep-whale-day-night-theme) — Day/night whale-girl skin: a crystal workshop by day and a moon-tide observatory by night, with paired scenes, chibi companions, ornaments, and lightweight bubble and star ambience. ★0.1k
 - [dsh-dream-skin](https://github.com/RevolutionLA/dsh-dream-skin) — One-command skin plugin: 8 original themes, translucent wallpaper with opacity/blur, per-user accent, and shareable theme-pack import/export, favorites and surprise-me — purely native on DSH's token system. ★0k
-- [maid-atelier](https://github.com/Small-tailqwq/dsh-deep-whale) — Whale-girl skin series for the DSH Web UI (maid-atelier). ★1.1k · [Details](https://dshmarketplace.dev/plugins/small-tailqwq-dsh-deep-whale-maid-atelier)
 
 ### Plugin Managers & Marketplaces
 
 - [dsh-market](https://github.com/dsh-market/dsh-market) — (Recommended) The plugin market inside DSH: a Settings page to browse and search the full community catalog by category, with confirmed one-click installs and an installed-plugins view. ★0.5k · [Details](https://dshmarketplace.dev/plugins/dsh-market-dsh-market)
-- [DSH-Plugins-Marketplace](https://github.com/bradeGithub/DSH-Plugins-Marketplace) — GitHub-topic-driven plugin & skill marketplace: a Settings page that browses the auto-collected registry (the whole dsh-plugin topic plus the skills index, CI-refreshed every 2 hours) with one-click install, type detection, install-script and host-shadow-dependency safety confirmations, env-key management, and the STANDARD.md recognition spec. ★0.1k
 - [dsh-plugins-store](https://github.com/ZASENJC/dsh-plugins-store) — 自动分类、收录和验证 DeepSeek-Harness 社区插件的市场。 Automatically categorize, curate, and validate the DeepSeek-Harness community plugin marketplace. ★0.1k
+- [DSH-Plugins-Marketplace](https://github.com/bradeGithub/DSH-Plugins-Marketplace) — GitHub-topic-driven plugin & skill marketplace: a Settings page that browses the auto-collected registry (the whole dsh-plugin topic plus the skills index, CI-refreshed every 2 hours) with one-click install, type detection, install-script and host-shadow-dependency safety confirmations, env-key management, and the STANDARD.md recognition spec. ★0.1k
 - [dsh-webui-market-plugin](https://github.com/Sanqi-normal/dsh-webui-market-plugin) — In-harness plugin market for the dsh web GUI: browse the awesome-dsh-plugin.com catalog and install/uninstall plugins into a profile from Settings → Plugins → Plugin Market. ★0.1k
 
 ### Development
@@ -149,7 +149,6 @@ Essential plugins recommended for new DSH users:
 - [forkprobe](https://github.com/Jayden-X-L/forkprobe) — Compare multiple skills on the same task and pick the winner. ★0.1k
 - [plugin-registry](https://github.com/vlln/plugin-registry) — Ecosystem infrastructure: a thin browser console for managing official repository plugins (zero patches) plus a make-dsh-plugin skill for guided plugin development. ★0.1k
 - [dsh-multica-runtime](https://github.com/forrestchang/dsh-multica-runtime) — Run the dsh runtime on Multica. ★0k
-- [mirage](https://github.com/strukto-ai/mirage) — Swaps the filesystem and bash providers for a mirage virtual workspace: file tools and shell commands run over mounted resources (RAM, S3, Redis, Slack, Gmail, Notion, Postgres) instead of the host disk, with per-mount read/write/exec modes, per-command sandbox routing (monty, pyodide, quickjs in process; docker, e2b, daytona remote), and installed CLIs (git, gh, slack, linear, ntn, gws, or one you register) as head words in the virtual terminal. ★3.5k · [Details](https://dshmarketplace.dev/plugins/strukto-ai-mirage-dsh)
 
 ### Fun & Experimental
 
@@ -169,7 +168,7 @@ We welcome plugin submissions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) fo
 
 ## 📚 Related Projects
 
-- **[DSH Marketplace](https://github.com/DshMarketPlace/dshmarketplace)** — The full 96+ plugin directory
+- **[DSH Marketplace](https://github.com/DshMarketPlace/dshmarketplace)** — The full 2348+ plugin directory
 - **[dsh-plugins-store](https://github.com/DshMarketPlace/dsh-plugins-store)** — Installable marketplace plugin
 - **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** — The official DSH project
 

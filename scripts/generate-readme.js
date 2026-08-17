@@ -28,7 +28,8 @@ async function fetchPluginData() {
 
           // Extract results array
           const plugins = parsed.results || parsed.plugins || parsed;
-          resolve(plugins);
+          const total = parsed.total || plugins.length;
+          resolve({ plugins, total });
         } catch (e) {
           reject(e);
         }
@@ -41,14 +42,18 @@ async function fetchPluginData() {
 async function loadPluginData() {
   try {
     const data = await fetchPluginData();
-    console.log(`✓ Fetched ${data.length} plugins from marketplace API`);
+    console.log(`✓ Fetched ${data.plugins.length} plugins from marketplace API (total indexed: ${data.total})`);
     return data;
   } catch (error) {
     console.warn(`⚠ Failed to fetch from API, using cache: ${error.message}`);
     if (fs.existsSync(CACHE_FILE)) {
       const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
       const plugins = cached.results || cached.plugins || cached;
-      return Array.isArray(plugins) ? plugins : [];
+      const total = cached.total || plugins.length;
+      return {
+        plugins: Array.isArray(plugins) ? plugins : [],
+        total
+      };
     }
     throw new Error('No cache available and API fetch failed');
   }
@@ -82,7 +87,7 @@ function generatePluginEntry(repoOrPlugin, marketplaceData) {
   }
 
   const name = meta.name;
-  const githubUrl = meta.repoUrl || `https://github.com/${repo}`;
+  const githubUrl = meta.repoUrl || `https://github.com/${meta.fullName}`;
   const marketplaceUrl = meta.url;
   const summary = meta.summary || '';
   const stars = meta.stars ? `★${Math.round(meta.stars / 1000 * 10) / 10}k` : '';
@@ -109,7 +114,7 @@ function generatePluginEntryZh(repoOrPlugin, marketplaceData) {
   }
 
   const name = meta.name;
-  const githubUrl = meta.repoUrl || `https://github.com/${repo}`;
+  const githubUrl = meta.repoUrl || `https://github.com/${meta.fullName}`;
   const marketplaceUrl = meta.url;
   const summary = meta.summaryZh || meta.summary || '';
   const stars = meta.stars ? `★${Math.round(meta.stars / 1000 * 10) / 10}k` : '';
@@ -129,8 +134,8 @@ function generatePluginEntryZh(repoOrPlugin, marketplaceData) {
 }
 
 // Generate English README
-function generateReadmeEN(marketplaceData) {
-  const totalPlugins = marketplaceData.length;
+function generateReadmeEN(data) {
+  const { plugins: marketplaceData, total: totalPlugins } = data;
   let content = `# Awesome DeepSeek Harness Plugins
 
 <div align="center">
@@ -171,7 +176,7 @@ Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all ${tota
 Get the marketplace as a DSH plugin for in-app browsing and installation:
 
 \`\`\`bash
-dsh plugin --profile web add npm:dsh-plugins-store
+dsh plugin --profile web add dshmarketplace-plugin
 \`\`\`
 
 Then access it via:
@@ -188,22 +193,32 @@ Essential plugins recommended for new DSH users:
 `;
 
   // Add starter pack
-  curated.starter.forEach(plugin => {
-    const entry = generatePluginEntry(plugin, marketplaceData);
-    if (entry) content += entry + '\n';
+  let starterCount = 0;
+  curated.starter.forEach(repo => {
+    const entry = generatePluginEntry(repo, marketplaceData);
+    if (entry) {
+      content += entry + '\n';
+      starterCount++;
+    }
   });
 
   content += '\n---\n\n## 📑 Categories\n\n';
 
   // Add categories
+  let totalCategoryPlugins = 0;
   curated.categories.forEach(category => {
     content += `### ${category.name}\n\n`;
 
+    let categoryCount = 0;
     category.plugins.forEach(plugin => {
       const entry = generatePluginEntry(plugin, marketplaceData);
-      if (entry) content += entry + '\n';
+      if (entry) {
+        content += entry + '\n';
+        categoryCount++;
+      }
     });
 
+    totalCategoryPlugins += categoryCount;
     content += '\n';
   });
 
@@ -233,12 +248,15 @@ We welcome plugin submissions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) fo
 To the extent possible under law, DSH Marketplace has waived all copyright and related rights to this work.
 `;
 
-  return content;
+  fs.writeFileSync(README_EN, content, 'utf8');
+  console.log(`✓ Generated ${README_EN}`);
+
+  return { starterCount, totalCategoryPlugins };
 }
 
 // Generate Chinese README
-function generateReadmeZH(marketplaceData) {
-  const totalPlugins = marketplaceData.length;
+function generateReadmeZH(data) {
+  const { plugins: marketplaceData, total: totalPlugins } = data;
   let content = `# Awesome DeepSeek Harness 插件
 
 <div align="center">
@@ -279,7 +297,7 @@ function generateReadmeZH(marketplaceData) {
 将市场作为 DSH 插件安装，实现应用内浏览和安装：
 
 \`\`\`bash
-dsh plugin --profile web add npm:dsh-plugins-store
+dsh plugin --profile web add dshmarketplace-plugin
 \`\`\`
 
 然后通过以下方式访问：
@@ -296,39 +314,32 @@ dsh plugin --profile web add npm:dsh-plugins-store
 `;
 
   // Add starter pack
-  curated.starter.forEach(plugin => {
-    const entry = generatePluginEntryZh(plugin, marketplaceData);
-    if (entry) content += entry + '\n';
+  let starterCount = 0;
+  curated.starter.forEach(repo => {
+    const entry = generatePluginEntryZh(repo, marketplaceData);
+    if (entry) {
+      content += entry + '\n';
+      starterCount++;
+    }
   });
 
   content += '\n---\n\n## 📑 分类\n\n';
 
-  // Category name translations
-  const categoryTranslations = {
-    'UI & Experience': 'UI 与体验',
-    'Models & Providers': '模型与提供商',
-    'Memory': '记忆',
-    'Tools & Capabilities': '工具与能力',
-    'Vision & Multimodal': '视觉与多模态',
-    'Workflow & Automation': '工作流与自动化',
-    'Skills': '技能',
-    'Sessions': '会话',
-    'Theme & Appearance': '主题与外观',
-    'Plugin Managers & Marketplaces': '插件管理器与市场',
-    'Development': '开发',
-    'Fun & Experimental': '趣味与实验性'
-  };
-
   // Add categories
+  let totalCategoryPlugins = 0;
   curated.categories.forEach(category => {
-    const zhName = categoryTranslations[category.name] || category.name;
-    content += `### ${zhName}\n\n`;
+    content += `### ${category.name}\n\n`;
 
+    let categoryCount = 0;
     category.plugins.forEach(plugin => {
       const entry = generatePluginEntryZh(plugin, marketplaceData);
-      if (entry) content += entry + '\n';
+      if (entry) {
+        content += entry + '\n';
+        categoryCount++;
+      }
     });
 
+    totalCategoryPlugins += categoryCount;
     content += '\n';
   });
 
@@ -338,7 +349,7 @@ dsh plugin --profile web add npm:dsh-plugins-store
 
 我们欢迎插件提交！请阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 了解：
 - 如何提交你的插件
-- 收录标准
+- 选择标准
 - PR 要求
 
 ---
@@ -355,42 +366,34 @@ dsh plugin --profile web add npm:dsh-plugins-store
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-在法律允许的范围内，DSH 插件市场已放弃本作品的所有版权及相关权利。
+在法律允许的范围内，DSH Marketplace 已放弃对本作品的所有版权及相关权利。
 `;
 
-  return content;
-}
-
-// Main function
-async function main() {
-  console.log('🚀 Generating README files...\n');
-
-  const marketplaceData = await loadPluginData();
-
-  // Generate English README
-  const readmeEN = generateReadmeEN(marketplaceData);
-  fs.writeFileSync(README_EN, readmeEN);
-  console.log(`✓ Generated ${README_EN}`);
-
-  // Generate Chinese README
-  const readmeZH = generateReadmeZH(marketplaceData);
-  fs.writeFileSync(README_ZH, readmeZH);
+  fs.writeFileSync(README_ZH, content, 'utf8');
   console.log(`✓ Generated ${README_ZH}`);
 
-  // Count plugins
-  const starterCount = curated.starter.length;
-  const totalCurated = starterCount + curated.categories.reduce((sum, cat) => sum + cat.plugins.length, 0);
-
-  console.log(`\n📊 Statistics:`);
-  console.log(`  - Marketplace plugins: ${marketplaceData.length}`);
-  console.log(`  - Curated plugins: ${totalCurated}`);
-  console.log(`  - Starter pack: ${starterCount}`);
-  console.log(`  - Categories: ${curated.categories.length}`);
-
-  console.log('\n✅ Done!');
+  return { starterCount, totalCategoryPlugins };
 }
 
-main().catch(error => {
-  console.error('❌ Error:', error.message);
-  process.exit(1);
-});
+// Main
+(async () => {
+  try {
+    console.log('🚀 Generating README files...\n');
+
+    const data = await loadPluginData();
+
+    const enStats = generateReadmeEN(data);
+    const zhStats = generateReadmeZH(data);
+
+    console.log(`\n📊 Statistics:`);
+    console.log(`  - Marketplace plugins: ${data.total}`);
+    console.log(`  - Curated plugins: ${enStats.totalCategoryPlugins} unique in categories`);
+    console.log(`  - Starter pack: ${enStats.starterCount} rendered`);
+    console.log(`  - Categories: ${curated.categories.length}`);
+
+    console.log('\n✅ Done!');
+  } catch (error) {
+    console.error(`\n❌ Error: ${error.message}`);
+    process.exit(1);
+  }
+})();
