@@ -227,13 +227,11 @@ Essential plugins recommended for new DSH users:
 
   // Add starter pack
   let starterCount = 0;
-  let detailsCount = 0;
   curated.starter.forEach(repo => {
     const entry = generatePluginEntry(repo, marketplaceData);
     if (entry) {
       content += entry + '\n';
       starterCount++;
-      if (entry.includes('[Details]')) detailsCount++;
     }
   });
 
@@ -250,7 +248,6 @@ Essential plugins recommended for new DSH users:
       if (entry) {
         content += entry + '\n';
         categoryCount++;
-        if (entry.includes('[Details]')) detailsCount++;
       }
     });
 
@@ -287,7 +284,7 @@ To the extent possible under law, DSH Marketplace has waived all copyright and r
   fs.writeFileSync(README_EN, content, 'utf8');
   console.log(`✓ Generated ${README_EN}`);
 
-  return { starterCount, totalCategoryPlugins, detailsCount };
+  return { starterCount, totalCategoryPlugins };
 }
 
 // Generate Chinese README
@@ -351,13 +348,11 @@ dsh plugin --profile web add dshmarketplace-plugin
 
   // Add starter pack
   let starterCount = 0;
-  let detailsCount = 0;
   curated.starter.forEach(repo => {
     const entry = generatePluginEntryZh(repo, marketplaceData);
     if (entry) {
       content += entry + '\n';
       starterCount++;
-      if (entry.includes('[详情]')) detailsCount++;
     }
   });
 
@@ -374,7 +369,6 @@ dsh plugin --profile web add dshmarketplace-plugin
       if (entry) {
         content += entry + '\n';
         categoryCount++;
-        if (entry.includes('[详情]')) detailsCount++;
       }
     });
 
@@ -411,7 +405,7 @@ dsh plugin --profile web add dshmarketplace-plugin
   fs.writeFileSync(README_ZH, content, 'utf8');
   console.log(`✓ Generated ${README_ZH}`);
 
-  return { starterCount, totalCategoryPlugins, detailsCount };
+  return { starterCount, totalCategoryPlugins };
 }
 
 // Main
@@ -427,10 +421,16 @@ dsh plugin --profile web add dshmarketplace-plugin
     // Calculate unique plugins
     const curated = yaml.load(fs.readFileSync(DATA_FILE, 'utf8'));
     const categoryRepos = new Set();
+    const detailsRepos = new Set();
     curated.categories.forEach(cat => {
       cat.plugins.forEach(p => {
         const key = (typeof p === 'string') ? p : (p.subpath ? `${p.repo}#${p.subpath}` : p.repo);
         categoryRepos.add(key);
+
+        const meta = findPlugin(data.plugins, p);
+        if (meta && typeof meta.url === 'string' && meta.url.startsWith('https://dshmarketplace.dev')) {
+          detailsRepos.add(key);
+        }
       });
     });
 
@@ -439,7 +439,7 @@ dsh plugin --profile web add dshmarketplace-plugin
     console.log(`  - Curated unique: ${categoryRepos.size}`);
     console.log(`  - Starter pack: ${enStats.starterCount}`);
     console.log(`  - Categories: ${curated.categories.length}`);
-    console.log(`  - With Details links: ${enStats.detailsCount} (${Math.round(enStats.detailsCount/categoryRepos.size*100)}%)`);
+    console.log(`  - With Details links: ${detailsRepos.size} (${Math.round(detailsRepos.size/categoryRepos.size*100)}%)`);
 
     console.log('\n✅ Done!');
   } catch (error) {

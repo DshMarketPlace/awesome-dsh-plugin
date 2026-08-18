@@ -7,24 +7,52 @@ const https = require('https');
 
 const DATA_FILE = path.join(__dirname, '../data/curated.yml');
 const CACHE_FILE = path.join(__dirname, '../data/marketplace-cache.json');
+const MARKETPLACE_API = 'https://dshmarketplace.dev/api/v1/plugins';
+
+function getJson(url) {
+  return new Promise((resolve, reject) => {
+    const request = https.get(url, (res) => {
+      let data = '';
+
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        if (res.statusCode < 200 || res.statusCode >= 300) {
+          reject(new Error(`Marketplace API returned HTTP ${res.statusCode}`));
+          return;
+        }
+
+        try {
+          resolve(JSON.parse(data));
+        } catch (error) {
+          reject(new Error(`Invalid Marketplace API response: ${error.message}`));
+        }
+      });
+    });
+
+    request.setTimeout(15000, () => {
+      request.destroy(new Error('Marketplace API request timed out'));
+    });
+    request.on('error', reject);
+  });
+}
 
 // Fetch marketplace data for validation
 async function fetchMarketplaceData() {
-  return new Promise((resolve, reject) => {
-    https.get('https://dshmarketplace.dev/api/v1/plugins?limit=2500', (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const parsed = JSON.parse(data);
-          const plugins = parsed.results || parsed.plugins || parsed;
-          resolve(plugins);
-        } catch (e) {
-          reject(e);
-        }
-      });
-    }).on('error', reject);
-  });
+  const parsed = await getJson(`${MARKETPLACE_API}?limit=2500`);
+  return parsed.results || parsed.plugins || parsed;
+}
+
+async function fetchPluginByFullName(fullName) {
+  const parsed = await getJson(`${MARKETPLACE_API}?q=${encodeURIComponent(fullName)}`);
+  const plugins = parsed.results || parsed.plugins || parsed;
+
+  if (!Array.isArray(plugins)) return null;
+
+  const normalizedFullName = fullName.toLowerCase();
+  return plugins.find(plugin =>
+    typeof plugin.fullName === 'string' &&
+    plugin.fullName.toLowerCase() === normalizedFullName
+  ) || null;
 }
 
 async function loadMarketplaceData() {
@@ -68,13 +96,12 @@ function validateCuratedList() {
   console.log(`✓ Found ${curated.categories.length} categories`);
 
   // Validate plugins
-  const starterRepos = new Set(curated.starter); // Starter repos to skip duplicate check
-  const seenRepos = new Set();
-  const allRepos = [];
-  let totalPlugins = 0;
+  const starterRepos = new Set();
+  const categoryRepos = new Set();
+  const allRepos = new Map();
   let errors = 0;
 
-  function validateRepo(repo, location, isStarter = false) {
+  function validateRepo(repo, location) {
     if (typeof repo !== 'string') {
       console.error(`✗ Plugin in ${location} should be a string, got: ${typeof repo}`);
       errors++;
@@ -88,21 +115,20 @@ function validateCuratedList() {
       return;
     }
 
-    // Only add to seenRepos for duplicate checking if not in starter
-    if (!isStarter) {
-      if (seenRepos.has(repo)) {
-        console.error(`✗ Duplicate plugin in ${location}: ${repo}`);
-        errors++;
-      }
-      seenRepos.add(repo);
+    if (starterRepos.has(repo)) {
+      console.error(`✗ Duplicate plugin in ${location}: ${repo}`);
+      errors++;
+      return;
     }
 
-    allRepos.push({ repo, location });
-    totalPlugins++;
+    starterRepos.add(repo);
+    if (!allRepos.has(repo)) {
+      allRepos.set(repo, { repo, location });
+    }
   }
 
   function validatePlugin(plugin, location) {
-    if (!plugin.repo) {
+    if (!plugin || typeof plugin !== 'object' || !plugin.repo) {
       console.error(`✗ Plugin in ${location} missing "repo" field`);
       errors++;
       return;
@@ -117,26 +143,21 @@ function validateCuratedList() {
 
     const key = plugin.subpath ? `${plugin.repo}#${plugin.subpath}` : plugin.repo;
 
-    // Skip duplicate check if this repo is in starter pack
-    const isInStarter = starterRepos.has(plugin.repo) || starterRepos.has(key);
-
-    // Check for duplicates within categories only
-    if (!isInStarter && seenRepos.has(key)) {
+    if (categoryRepos.has(key)) {
       console.error(`✗ Duplicate plugin in ${location}: ${key}`);
       errors++;
+      return;
     }
 
-    if (!isInStarter) {
-      seenRepos.add(key);
+    categoryRepos.add(key);
+    if (!allRepos.has(key)) {
+      allRepos.set(key, { repo: plugin.repo, subpath: plugin.subpath, location });
     }
-
-    allRepos.push({ repo: plugin.repo, subpath: plugin.subpath, location });
-    totalPlugins++;
   }
 
   // Validate starter pack (string array)
   curated.starter.forEach((repo, idx) => {
-    validateRepo(repo, `starter[${idx}]`, true);
+    validateRepo(repo, `starter[${idx}]`);
   });
 
   // Validate categories
@@ -152,34 +173,36 @@ function validateCuratedList() {
     });
   });
 
+  starterRepos.forEach(repo => {
+    if (!categoryRepos.has(repo)) {
+      console.error(`✗ Starter plugin is missing from categories: ${repo}`);
+      errors++;
+    }
+  });
+
   if (errors > 0) {
     console.error(`\n✗ Found ${errors} error(s) in structure validation`);
     process.exit(1);
   }
 
-  console.log(`✓ Total plugins: ${totalPlugins}`);
+  const starterAlsoInCategories = [...starterRepos].filter(repo => categoryRepos.has(repo)).length;
+  const totalUnique = allRepos.size;
 
-  // Calculate actual unique plugins
-  const uniqueInCategories = seenRepos.size;
-  const uniqueInStarter = starterRepos.size;
-  const starterAlsoInCategories = [...starterRepos].filter(r => seenRepos.has(r)).length;
-  const totalUnique = uniqueInCategories + uniqueInStarter - starterAlsoInCategories;
-
-  console.log(`✓ Unique plugins in categories: ${uniqueInCategories}`);
-  console.log(`✓ Unique plugins in starter: ${uniqueInStarter}`);
+  console.log(`✓ Unique plugins in categories: ${categoryRepos.size}`);
+  console.log(`✓ Plugins in starter: ${starterRepos.size}`);
   console.log(`✓ Starter also in categories: ${starterAlsoInCategories}`);
   console.log(`✓ Total unique plugins across both: ${totalUnique}`);
 
   // Check recommended range
-  if (totalPlugins < 50) {
-    console.warn(`⚠ Plugin count (${totalPlugins}) is below recommended minimum (50)`);
+  if (totalUnique < 50) {
+    console.warn(`⚠ Plugin count (${totalUnique}) is below recommended minimum (50)`);
   }
-  if (totalPlugins > 120) {
-    console.warn(`⚠ Plugin count (${totalPlugins}) is above recommended maximum (120)`);
+  if (totalUnique > 100) {
+    console.warn(`⚠ Plugin count (${totalUnique}) is above recommended maximum (100)`);
   }
 
   console.log('\n✅ Structure validation passed!');
-  return { curated, allRepos };
+  return { curated, allRepos: [...allRepos.values()] };
 }
 
 // Cross-check with marketplace
@@ -200,15 +223,26 @@ async function validateWithMarketplace(allRepos) {
   let installFailed = 0;
   const issues = [];
 
-  allRepos.forEach(({ repo, subpath, location }) => {
+  for (const { repo, subpath, location } of allRepos) {
     const fullName = subpath ? `${repo}#${subpath}` : repo;
-    const meta = marketplaceData.find(p => p.fullName === fullName || p.fullName === repo);
+    let meta = marketplaceData.find(p => p.fullName === fullName);
+
+    if (!meta) {
+      try {
+        meta = await fetchPluginByFullName(fullName);
+        if (meta) {
+          console.log(`✓ Found via exact Marketplace query: ${fullName}`);
+        }
+      } catch (error) {
+        console.warn(`⚠ Exact Marketplace query failed for ${fullName}: ${error.message}`);
+      }
+    }
 
     if (!meta) {
       console.error(`✗ Plugin not found in marketplace: ${fullName} (${location})`);
       issues.push({ type: 'not_found', plugin: fullName, location });
       notFound++;
-      return;
+      continue;
     }
 
     // Check installability - now treated as error
@@ -224,7 +258,7 @@ async function validateWithMarketplace(allRepos) {
       issues.push({ type: 'install_failed', plugin: fullName, location });
       installFailed++;
     }
-  });
+  }
 
   const hasCriticalErrors = notFound > 0 || notInstallable > 0 || installFailed > 0;
 
