@@ -35,6 +35,7 @@ categories:
       - repo: HanaAyane/dsh-reasoning-effort
       - repo: AITabby/dockyard-dsh
       - repo: Mars-Sea/dsh-commandcode-provider
+      - repo: sharewiner/dsh-model-management
 
   - name: Memory
     slug: memory
