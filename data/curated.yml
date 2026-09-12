@@ -53,6 +53,7 @@ categories:
       - repo: zhaoolee/notes
       - repo: liustack/modsearch
       - repo: lire1131/dsh-undo-plugin
+      - repo: sogoodayo/dsh-livedocs
 
   - name: Vision & Multimodal
     slug: vision
