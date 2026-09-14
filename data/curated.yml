@@ -62,6 +62,7 @@ categories:
       - repo: Anionex/dsh-vision-toolkit
       - repo: ysr666/dsh-vision-router
       - repo: william-jin-cmu/dsh-vision
+      - repo: exoticknight/dsh-labnana
 
   - name: Workflow & Automation
     slug: workflow
