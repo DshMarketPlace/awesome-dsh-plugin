@@ -26,6 +26,7 @@ categories:
       - repo: omdsh-dev/dsh-at-file
       - repo: huiliyi37/dsh-tianshu-tui
       - repo: Nagi-ovo/dsh-visualize
+      - repo: exoticknight/dsh-just-chat
 
   - name: Models & Providers
     slug: model
