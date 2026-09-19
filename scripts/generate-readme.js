@@ -3,83 +3,16 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-const https = require('https');
+const { requiredNames, loadSnapshot, fullName, findPlugin: exactPlugin } = require('./marketplace');
 
 const DATA_FILE = path.join(__dirname, '../data/curated.yml');
-const CACHE_FILE = path.join(__dirname, '../data/marketplace-cache.json');
 const README_EN = path.join(__dirname, '../README.md');
 const README_ZH = path.join(__dirname, '../README.zh-CN.md');
-
-// Load curated list
 const curated = yaml.load(fs.readFileSync(DATA_FILE, 'utf8'));
 
-// Fetch plugin data from marketplace API
-async function fetchPluginData() {
-  return new Promise((resolve, reject) => {
-    // Use the full API with all metadata
-    https.get('https://dshmarketplace.dev/api/v1/plugins?limit=2500', (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const parsed = JSON.parse(data);
-          // Save cache
-          fs.writeFileSync(CACHE_FILE, JSON.stringify(parsed, null, 2));
-
-          // Extract results array
-          const plugins = parsed.results || parsed.plugins || parsed;
-          const total = parsed.total || plugins.length;
-          resolve({ plugins, total });
-        } catch (e) {
-          reject(e);
-        }
-      });
-    }).on('error', reject);
-  });
-}
-
-// Load cached data or fetch new
 async function loadPluginData() {
-  // Always use cache if it exists and is recent (within 24 hours)
-  if (fs.existsSync(CACHE_FILE)) {
-    const stats = fs.statSync(CACHE_FILE);
-    const ageHours = (Date.now() - stats.mtimeMs) / 1000 / 60 / 60;
-
-    if (ageHours < 24) {
-      console.log(`✓ Using cached data (${Math.round(ageHours)}h old)`);
-      const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-      const plugins = cached.results || cached.plugins || cached;
-      const total = cached.total || plugins.length;
-      return {
-        plugins: Array.isArray(plugins) ? plugins : [],
-        total
-      };
-    }
-  }
-
-  // Fetch new data only if cache is missing or stale
-  try {
-    const response = await fetchPluginData();
-    const plugins = response.results || response.plugins || response;
-    const total = response.total || plugins.length;
-    console.log(`✓ Fetched ${plugins.length} plugins from marketplace API (total indexed: ${total})`);
-    return { plugins, total };
-  } catch (error) {
-    console.warn(`⚠ Failed to fetch from API: ${error.message}`);
-
-    // Fall back to cache even if stale
-    if (fs.existsSync(CACHE_FILE)) {
-      console.log('Using stale cache as fallback');
-      const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-      const plugins = cached.results || cached.plugins || cached;
-      const total = cached.total || plugins.length;
-      return {
-        plugins: Array.isArray(plugins) ? plugins : [],
-        total
-      };
-    }
-    throw new Error('No cache available and API fetch failed');
-  }
+  const snapshot = await loadSnapshot(requiredNames(curated));
+  return { plugins: snapshot.results, total: snapshot.total };
 }
 
 // Sanitize text to remove invalid characters
@@ -94,18 +27,7 @@ function sanitizeText(text) {
 
 // Find plugin metadata by repo (string or object format)
 function findPlugin(marketplaceData, repoOrPlugin) {
-  let repo, subpath;
-
-  if (typeof repoOrPlugin === 'string') {
-    repo = repoOrPlugin;
-    subpath = null;
-  } else {
-    repo = repoOrPlugin.repo;
-    subpath = repoOrPlugin.subpath;
-  }
-
-  const fullName = subpath ? `${repo}#${subpath}` : repo;
-  return marketplaceData.find(p => p.fullName === fullName || p.fullName === repo);
+  return exactPlugin(marketplaceData, fullName(repoOrPlugin));
 }
 
 // Generate plugin entry
@@ -179,6 +101,8 @@ function generateReadmeEN(data) {
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 A curated list of useful plugins for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), maintained by [DSH Marketplace](https://dshmarketplace.dev).
+
+This is our independent recommendation list. The [upstream registry](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) is a separate project; a PR here does not itself register a plugin in the marketplace.
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -300,6 +224,8 @@ function generateReadmeZH(data) {
 [![欢迎PR](https://img.shields.io/badge/PRs-欢迎-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 精选的 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 插件列表，由 [DSH 插件市场](https://dshmarketplace.dev/zh)维护。
+
+这是我们独立维护的推荐列表，与[上游注册表](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 是两个项目。在这里提交 PR 是申请加入推荐列表，不会直接触发市场收录。
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 

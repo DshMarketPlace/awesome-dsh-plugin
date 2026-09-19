@@ -5,7 +5,7 @@
   "scripts": {
     "generate": "node scripts/generate-readme.js",
     "validate": "node scripts/validate.js",
-    "test": "npm run validate && npm run generate"
+    "test": "node --test scripts/marketplace.test.js && npm run validate && MARKETPLACE_OFFLINE=1 npm run generate"
   },
   "repository": {
     "type": "git",

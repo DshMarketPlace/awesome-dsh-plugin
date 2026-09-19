@@ -3,71 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-const https = require('https');
-
+const { loadSnapshot, fullName, findPlugin } = require('./marketplace');
 const DATA_FILE = path.join(__dirname, '../data/curated.yml');
-const CACHE_FILE = path.join(__dirname, '../data/marketplace-cache.json');
-const MARKETPLACE_API = 'https://dshmarketplace.dev/api/v1/plugins';
-
-function getJson(url) {
-  return new Promise((resolve, reject) => {
-    const request = https.get(url, (res) => {
-      let data = '';
-
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        if (res.statusCode < 200 || res.statusCode >= 300) {
-          reject(new Error(`Marketplace API returned HTTP ${res.statusCode}`));
-          return;
-        }
-
-        try {
-          resolve(JSON.parse(data));
-        } catch (error) {
-          reject(new Error(`Invalid Marketplace API response: ${error.message}`));
-        }
-      });
-    });
-
-    request.setTimeout(15000, () => {
-      request.destroy(new Error('Marketplace API request timed out'));
-    });
-    request.on('error', reject);
-  });
-}
-
-// Fetch marketplace data for validation
-async function fetchMarketplaceData() {
-  const parsed = await getJson(`${MARKETPLACE_API}?limit=2500`);
-  return parsed.results || parsed.plugins || parsed;
-}
-
-async function fetchPluginByFullName(fullName) {
-  const parsed = await getJson(`${MARKETPLACE_API}?q=${encodeURIComponent(fullName)}`);
-  const plugins = parsed.results || parsed.plugins || parsed;
-
-  if (!Array.isArray(plugins)) return null;
-
-  const normalizedFullName = fullName.toLowerCase();
-  return plugins.find(plugin =>
-    typeof plugin.fullName === 'string' &&
-    plugin.fullName.toLowerCase() === normalizedFullName
-  ) || null;
-}
-
-async function loadMarketplaceData() {
-  try {
-    return await fetchMarketplaceData();
-  } catch (error) {
-    console.warn(`⚠ Failed to fetch from API: ${error.message}`);
-    if (fs.existsSync(CACHE_FILE)) {
-      console.log('Using cached marketplace data');
-      const cached = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-      return cached.results || cached.plugins || cached;
-    }
-    return null; // Allow validation without network
-  }
-}
 
 function validateCuratedList() {
   console.log('🔍 Validating curated list...\n');
@@ -209,12 +146,8 @@ function validateCuratedList() {
 async function validateWithMarketplace(allRepos) {
   console.log('\n🔍 Validating against marketplace data...\n');
 
-  const marketplaceData = await loadMarketplaceData();
-
-  if (!marketplaceData || marketplaceData.length === 0) {
-    console.log('⚠ Skipping marketplace validation (no data available)');
-    return true;
-  }
+  const snapshot = await loadSnapshot(allRepos.map(fullName));
+  const marketplaceData = snapshot.results;
 
   console.log(`✓ Loaded ${marketplaceData.length} plugins from marketplace`);
 
@@ -225,18 +158,7 @@ async function validateWithMarketplace(allRepos) {
 
   for (const { repo, subpath, location } of allRepos) {
     const fullName = subpath ? `${repo}#${subpath}` : repo;
-    let meta = marketplaceData.find(p => p.fullName === fullName);
-
-    if (!meta) {
-      try {
-        meta = await fetchPluginByFullName(fullName);
-        if (meta) {
-          console.log(`✓ Found via exact Marketplace query: ${fullName}`);
-        }
-      } catch (error) {
-        console.warn(`⚠ Exact Marketplace query failed for ${fullName}: ${error.message}`);
-      }
-    }
+    const meta = findPlugin(marketplaceData, fullName);
 
     if (!meta) {
       console.error(`✗ Plugin not found in marketplace: ${fullName} (${location})`);

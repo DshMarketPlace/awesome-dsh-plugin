@@ -2,6 +2,12 @@
 
 Thank you for your interest in contributing! This guide explains how to submit your plugin to be featured in the Awesome List.
 
+This repository is DSH Marketplace's curated recommendations, maintained independently
+from [awesome-dsh-plugin/awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin).
+A PR here adds a recommendation; it does not itself register a plugin in the marketplace.
+Marketplace discovery uses the public topics and the upstream registry. Topic admission
+requires a plugin marker, a description, and at least ten commits.
+
 ## 📋 Submission Criteria
 
 To be included in the Awesome List, your plugin must meet these requirements:
@@ -75,7 +81,14 @@ Make sure your plugin meets the criteria above. Check:
    - Validate YAML syntax
    - Check repo format
    - Fetch metadata from DSH Marketplace API
-   - Generate README previews
+   - Generate both READMEs from the same metadata snapshot
+
+   Commit `data/marketplace-cache.json`, `README.md`, and `README.zh-CN.md`
+   together with your YAML change. CI checks this committed snapshot offline so
+   live Star counts and catalogue updates cannot invalidate an unchanged PR.
+   `npm test` refreshes the snapshot using exact queries for every missing entry.
+   Installation verification is separate: a valid installation command does not
+   mean the plugin has passed a sandbox or a security audit.
 
 4. **Submit the Pull Request**
 
