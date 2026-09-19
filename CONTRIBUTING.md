@@ -85,7 +85,9 @@ Make sure your plugin meets the criteria above. Check:
 
    Commit `data/marketplace-cache.json`, `README.md`, and `README.zh-CN.md`
    together with your YAML change. CI checks this committed snapshot offline so
-   live Star counts and catalogue updates cannot invalidate an unchanged PR.
+   live Star counts and catalogue updates cannot change the rendered output.
+   CI also checks the live catalogue without rewriting the snapshot; missing or
+   non-installable listings still fail validation.
    `npm test` refreshes the snapshot using exact queries for every missing entry.
    Installation verification is separate: a valid installation command does not
    mean the plugin has passed a sandbox or a security audit.

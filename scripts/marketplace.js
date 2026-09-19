@@ -61,7 +61,9 @@ async function loadSnapshot(names) {
     return snapshot;
   }
   const snapshot = await fetchSnapshot(names);
-  fs.writeFileSync(CACHE_FILE, JSON.stringify(snapshot, null, 2) + '\n');
+  if (process.env.MARKETPLACE_WRITE_CACHE !== '0') {
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(snapshot, null, 2) + '\n');
+  }
   return snapshot;
 }
 

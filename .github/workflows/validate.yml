@@ -44,6 +44,14 @@ jobs:
       - name: Validate curated list
         run: npm test
 
+      # A contributed snapshot cannot vouch for its own listings. Check the
+      # live catalogue too, without rewriting the reproducible render input.
+      - name: Cross-check published listings
+        env:
+          MARKETPLACE_OFFLINE: '0'
+          MARKETPLACE_WRITE_CACHE: '0'
+        run: npm run validate
+
       - name: Check for changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
