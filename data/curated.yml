@@ -28,6 +28,7 @@ categories:
       - repo: Nagi-ovo/dsh-visualize
       - repo: mrSutivu/plugin-effort-slider
       - repo: sogoodayo/dsh-code-ui
+      - repo: exoticknight/dsh-just-chat
 
   - name: Models & Providers
     slug: model
