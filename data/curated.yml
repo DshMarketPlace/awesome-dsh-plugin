@@ -27,6 +27,7 @@ categories:
       - repo: huiliyi37/dsh-tianshu-tui
       - repo: Nagi-ovo/dsh-visualize
       - repo: mrSutivu/plugin-effort-slider
+      - repo: sogoodayo/dsh-code-ui
 
   - name: Models & Providers
     slug: model
