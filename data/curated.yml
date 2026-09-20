@@ -57,6 +57,7 @@ categories:
       - repo: liustack/modsearch
       - repo: lire1131/dsh-undo-plugin
       - repo: sogoodayo/dsh-livedocs
+      - repo: GooDAnDReaDY/dsh-plugin-notify
 
   - name: Vision & Multimodal
     slug: vision
@@ -76,6 +77,7 @@ categories:
       - repo: icetomoyo/dsh_workflow
       - repo: btspoony/mstar-harness
       - repo: titanwings/dsh-automation
+      - repo: GooDAnDReaDY/dsh-agent-orchestrator
 
   - name: Skills
     slug: skill
@@ -116,6 +118,7 @@ categories:
       - repo: Jayden-X-L/forkprobe
       - repo: vlln/plugin-registry
       - repo: forrestchang/dsh-multica-runtime
+      - repo: GooDAnDReaDY/dsh-github-ops
 
   - name: Fun & Experimental
     slug: fun
