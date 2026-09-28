@@ -29,7 +29,8 @@ categories:
       - repo: mrSutivu/plugin-effort-slider
       - repo: sogoodayo/dsh-code-ui
       - repo: exoticknight/dsh-just-chat
-
+      - repo: jeffreyren1/dsh-custom-js
+      
   - name: Models & Providers
     slug: model
     plugins:
