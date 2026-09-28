@@ -77,7 +77,6 @@ categories:
       - repo: icetomoyo/dsh_workflow
       - repo: btspoony/mstar-harness
       - repo: titanwings/dsh-automation
-      - repo: GooDAnDReaDY/dsh-agent-orchestrator
 
   - name: Skills
     slug: skill
