@@ -92,6 +92,7 @@ categories:
       - repo: Anionex/dsh-turn-rewind
       - repo: eri64/dsh-claude-ux
       - repo: Nwflower/dsh-chat-import
+      - repo: knopki/dsh-prompt-profiles
 
   - name: Theme & Appearance
     slug: theme
