@@ -29,6 +29,7 @@ categories:
       - repo: mrSutivu/plugin-effort-slider
       - repo: sogoodayo/dsh-code-ui
       - repo: exoticknight/dsh-just-chat
+      - repo: Ephemeral-AI-Lab/mayfly
 
   - name: Models & Providers
     slug: model
