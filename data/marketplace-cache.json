@@ -1,6 +1,6 @@
 {
   "total": 8642,
-  "count": 57,
+  "count": 58,
   "results": [
     {
       "fullName": "dsh-market/dsh-market",
@@ -2071,6 +2071,40 @@
       ],
       "inRegistry": true,
       "url": "https://dshmarketplace.dev/plugins/vlln-whale-girl"
+    },
+    {
+      "fullName": "joeseesun/qiaomu-rss-dsh",
+      "name": "qiaomu-rss-dsh",
+      "owner": "joeseesun",
+      "repo": "qiaomu-rss-dsh",
+      "subpath": null,
+      "summary": "在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness",
+      "summaryZh": null,
+      "category": null,
+      "language": "JavaScript",
+      "license": "GPL-3.0",
+      "stars": 8,
+      "pushedAt": "2026-09-30T15:55:14.000Z",
+      "repoUrl": "https://github.com/joeseesun/qiaomu-rss-dsh",
+      "npmPackage": null,
+      "installKind": "github",
+      "install": "dsh plugin --profile web add github:joeseesun/qiaomu-rss-dsh",
+      "installable": true,
+      "installOptions": [
+        {
+          "label": "GitHub",
+          "cmd": "dsh plugin --profile web add github:joeseesun/qiaomu-rss-dsh",
+          "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
+        }
+      ],
+      "installCheck": "passed",
+      "installCheckedAt": "2026-09-30T23:14:04.000Z",
+      "blockedBuilds": [],
+      "riskFlags": [
+        "terminal surface"
+      ],
+      "inRegistry": false,
+      "url": "https://github.com/joeseesun/qiaomu-rss-dsh"
     }
   ]
 }

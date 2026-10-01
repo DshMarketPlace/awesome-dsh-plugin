@@ -98,6 +98,7 @@ Essential plugins recommended for new DSH users:
 
 ### Tools & Capabilities
 
+- [qiaomu-rss-dsh](https://github.com/joeseesun/qiaomu-rss-dsh) — 在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness ★0k
 - [treg](https://github.com/superdesigndev/treg) — Tool catalog for agents: search ~2,600 external endpoints (SEO and SERP, backlinks, social, people and company enrichment, ad libraries, scraping) by the task you want done, read each one's parameters and per-call price, then call it with the credential injected server-side. Ships the skill plus an MCP row that stays disabled until TREG_TOKEN is set. ★1.2k · [Details](https://dshmarketplace.dev/plugins/superdesigndev-treg)
 - [dsh-browser](https://github.com/Lum1104/dsh-browser) — Chrome sidebar extension that lets DSH operate your browser directly, no vision capabilities required. ★0.6k · [Details](https://dshmarketplace.dev/plugins/lum1104-dsh-browser)
 - [notes](https://github.com/zhaoolee/notes) — Export DSH conversations as Smartisan Notes-style PNGs, or create and update Markdown notes in a configured account-scoped workspace. ★0.2k · [Details](https://dshmarketplace.dev/plugins/zhaoolee-notes)

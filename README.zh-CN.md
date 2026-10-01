@@ -98,6 +98,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 
 ### Tools & Capabilities
 
+- [qiaomu-rss-dsh](https://github.com/joeseesun/qiaomu-rss-dsh) — 在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness ★0k
 - [treg](https://github.com/superdesigndev/treg) — 给 Agent 的工具目录：按「要做的事」检索约 2,600 个外部接口（SEO 与 SERP、外链、社交、人物与公司信息补全、广告库、抓取），查看参数与单次调用价格后直接调用，凭据由服务端注入。附带技能，MCP 行在未设置 TREG_TOKEN 前保持禁用。 ★1.2k · [详情](https://dshmarketplace.dev/plugins/superdesigndev-treg)
 - [dsh-browser](https://github.com/Lum1104/dsh-browser) — Chrome 侧边栏扩展，让 DSH 直接操控你的浏览器，无需视觉能力。 ★0.6k · [详情](https://dshmarketplace.dev/plugins/lum1104-dsh-browser)
 - [notes](https://github.com/zhaoolee/notes) — 将 DSH 对话导出为锤子便签风格 PNG，或在配置的账号工作区中新建和更新 Markdown 便签。 ★0.2k · [详情](https://dshmarketplace.dev/plugins/zhaoolee-notes)

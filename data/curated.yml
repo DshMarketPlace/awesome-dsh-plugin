@@ -51,6 +51,7 @@ categories:
   - name: Tools & Capabilities
     slug: tools
     plugins:
+      - repo: joeseesun/qiaomu-rss-dsh
       - repo: superdesigndev/treg
       - repo: Lum1104/dsh-browser
       - repo: zhaoolee/notes
