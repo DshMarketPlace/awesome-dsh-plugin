@@ -184,3 +184,15 @@ Open an issue with the `question` label, and we'll help you out!
 ---
 
 Thank you for contributing to the DSH plugin ecosystem! 🎉
+
+## Badges for your plugin README
+
+Once your plugin is listed, its Marketplace page provides a live install-check badge. Open your listing and copy the Markdown from **Show it in your README**. The badge links readers to your Marketplace page and updates when the install check is rerun.
+
+Plugins selected for this curated list may also use this badge:
+
+```markdown
+[![Featured in Awesome DSH Plugins](https://img.shields.io/badge/Awesome%20DSH-Featured-7c3aed?style=flat-square)](https://github.com/DshMarketPlace/awesome-dsh-plugin)
+```
+
+The featured badge is for entries in this curated list. Marketplace inclusion and a passing install check are separate signals; neither is a security audit.
