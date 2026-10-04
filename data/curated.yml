@@ -22,6 +22,7 @@ categories:
     slug: ui
     plugins:
       - repo: omdsh-dev/DSH-better-sidebar
+      - repo: TnzGit/dsh-live-perf-gauges
       - repo: ccch1mneyyy/dsh-TUI
       - repo: omdsh-dev/dsh-at-file
       - repo: huiliyi37/dsh-tianshu-tui
