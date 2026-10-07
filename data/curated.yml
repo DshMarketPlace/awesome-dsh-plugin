@@ -128,3 +128,4 @@ categories:
     plugins:
       - repo: Nagi-ovo/dsh-ads
       - repo: vlln/whale-girl
+      - repo: YangShen-SWE/dsh-plugin-simple-pet
