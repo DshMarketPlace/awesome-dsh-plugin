@@ -4,7 +4,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Browse Marketplace](https://img.shields.io/badge/Browse-DSH%20Marketplace-blue?style=flat-square)](https://dshmarketplace.dev)
-[![Plugins](https://img.shields.io/badge/plugins-9909+-success?style=flat-square)](https://dshmarketplace.dev)
+[![Plugins](https://img.shields.io/badge/plugins-10371+-success?style=flat-square)](https://dshmarketplace.dev)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 A curated list of useful plugins for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), maintained by [DSH Marketplace](https://dshmarketplace.dev).
@@ -19,7 +19,7 @@ This is our independent recommendation list. The [upstream registry](https://git
 
 ## 🌟 Why This List Exists
 
-**DSH Marketplace** indexes the complete DeepSeek Harness plugin ecosystem — currently tracking 9909+ plugins.
+**DSH Marketplace** indexes the complete DeepSeek Harness plugin ecosystem — currently tracking 10371+ plugins.
 
 This **Awesome List** is a curated subset: we hand-pick plugins worth trying first. Think of it as "the plugins you should actually install" rather than "every plugin that exists."
 
@@ -29,7 +29,7 @@ This **Awesome List** is a curated subset: we hand-pick plugins worth trying fir
 
 ### Browse the Full Marketplace
 
-Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 9909+ indexed plugins with:
+Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 10371+ indexed plugins with:
 - Advanced search and filtering
 - Installation validation status
 - Detailed plugin pages
@@ -88,7 +88,8 @@ Essential plugins recommended for new DSH users:
 - [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) — AnySearch-powered real-time web and vertical search provider for DeepSeek Harness. ★0.4k
 - [dsh-reasoning-effort](https://github.com/HanaAyane/dsh-reasoning-effort) — DSH适用的Codex风格的思考强度滑块，以及大肥鱼跑步滑块。Codex-style model and reasoning-effort slider for DeepSeek Harness ★0.2k
 - [dockyard-dsh](https://github.com/AITabby/dockyard-dsh) — A macOS-only native account-pool and provider plugin for DeepSeek Harness. ★0.1k
-- [dsh-commandcode-provider](https://github.com/Mars-Sea/dsh-commandcode-provider) — Unofficial Command Code LLM provider: registers a `commandcode` route with a live model catalog and reasoning-effort support. ★0.2k · [Details](https://dshmarketplace.dev/plugins/mars-sea-dsh-commandcode-provider)
+- [dsh-commandcode-provider](https://github.com/Mars-Sea/dsh-commandcode-provider) — Unofficial Command Code LLM provider: registers a `commandcode` route with a live model catalog and reasoning-effort support. ★0.4k · [Details](https://dshmarketplace.dev/plugins/mars-sea-dsh-commandcode-provider)
+- [dsh-oh-my-claude](https://github.com/lcestou/dsh-oh-my-claude) — Claude Code CLI as an LLM provider for dsh: live model list, per-session resume, approval relay, images, a memory/rewind/changes panel, and workspaces on remote SSH boxes. ★0k
 
 ### Memory
 
@@ -105,7 +106,7 @@ Essential plugins recommended for new DSH users:
 - [notes](https://github.com/zhaoolee/notes) — Export DSH conversations as Smartisan Notes-style PNGs, or create and update Markdown notes in a configured account-scoped workspace. ★0.2k · [Details](https://dshmarketplace.dev/plugins/zhaoolee-notes)
 - [modsearch](https://github.com/liustack/modsearch) — Web search bridge for text-only agents: ask the web or X, get structured JSON evidence (search, fetch, citations). ★0.6k · [Details](https://dshmarketplace.dev/plugins/liustack-modsearch)
 - [dsh-undo-plugin](https://github.com/lire1131/dsh-undo-plugin) — Undo/redo & rollback system for DSH: every config change is auto-snapshotted; undo/redo/restore to any version from the WebUI or the offline CLI/GUI tools (works even when DSH fails to boot). ★0.2k · [Details](https://dshmarketplace.dev/plugins/lire1131-dsh-undo-plugin)
-- [dsh-livedocs](https://github.com/sogoodayo/dsh-livedocs) — DSH 实时库文档：写代码前自动拉取项目安装版本的官方文档，消灭幻觉 API。零配置零 Key。Version-pinned live library docs for DeepSeek Harness — kill hallucinated APIs
+- [dsh-livedocs](https://github.com/sogoodayo/dsh-livedocs) — DSH 实时库文档：写代码前自动拉取项目安装版本的官方文档，消灭幻觉 API。零配置零 Key。Version-pinned live library docs for DeepSeek Harness — kill hallucinated APIs ★0k
 - [dsh-plugin-notify](https://github.com/GooDAnDReaDY/dsh-plugin-notify) — DSH plugin: audio chimes, cross-session toasts, desktop push, and IM webhooks for turn completion, errors, and approvals.
 - [qiaomu-rss-dsh](https://github.com/joeseesun/qiaomu-rss-dsh) — 在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness ★0k
 
@@ -181,7 +182,7 @@ We welcome plugin submissions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) fo
 
 ## 📚 Related Projects
 
-- **[DSH Marketplace](https://github.com/DshMarketPlace/dshmarketplace)** — The full 9909+ plugin directory
+- **[DSH Marketplace](https://github.com/DshMarketPlace/dshmarketplace)** — The full 10371+ plugin directory
 - **[dsh-plugins-store](https://github.com/DshMarketPlace/dsh-plugins-store)** — Installable marketplace plugin
 - **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** — The official DSH project
 

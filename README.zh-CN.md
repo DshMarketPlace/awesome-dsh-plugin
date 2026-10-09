@@ -4,7 +4,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![浏览市场](https://img.shields.io/badge/浏览-DSH%20插件市场-blue?style=flat-square)](https://dshmarketplace.dev/zh)
-[![插件数量](https://img.shields.io/badge/插件-9909+-success?style=flat-square)](https://dshmarketplace.dev/zh)
+[![插件数量](https://img.shields.io/badge/插件-10371+-success?style=flat-square)](https://dshmarketplace.dev/zh)
 [![欢迎PR](https://img.shields.io/badge/PRs-欢迎-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 精选的 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 插件列表，由 [DSH 插件市场](https://dshmarketplace.dev/zh)维护。
@@ -19,7 +19,7 @@
 
 ## 🌟 为什么有这个列表
 
-**DSH 插件市场**索引了完整的 DeepSeek Harness 插件生态 — 目前已收录 9909+ 个插件。
+**DSH 插件市场**索引了完整的 DeepSeek Harness 插件生态 — 目前已收录 10371+ 个插件。
 
 这个 **Awesome 列表**是精选子集：我们人工挑选值得优先尝试的插件。可以理解为"你应该安装的插件"而不是"所有存在的插件"。
 
@@ -29,7 +29,7 @@
 
 ### 浏览完整市场
 
-访问 **[dshmarketplace.dev](https://dshmarketplace.dev/zh)** 探索全部 9909+ 个已索引插件，支持：
+访问 **[dshmarketplace.dev](https://dshmarketplace.dev/zh)** 探索全部 10371+ 个已索引插件，支持：
 - 高级搜索和筛选
 - 安装验证状态
 - 详细插件页面
@@ -88,7 +88,8 @@ dsh plugin --profile web add dshmarketplace-plugin
 - [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) — 基于 AnySearch 的实时网页与垂直搜索插件，为 DeepSeek Harness 提供搜索工具。 ★0.4k
 - [dsh-reasoning-effort](https://github.com/HanaAyane/dsh-reasoning-effort) — DSH适用的Codex风格的思考强度滑块，以及大肥鱼跑步滑块。Codex-style model and reasoning-effort slider for DeepSeek Harness ★0.2k
 - [dockyard-dsh](https://github.com/AITabby/dockyard-dsh) — A macOS-only native account-pool and provider plugin for DeepSeek Harness. ★0.1k
-- [dsh-commandcode-provider](https://github.com/Mars-Sea/dsh-commandcode-provider) — 非官方 Command Code 模型接入插件：注册 `commandcode` 路由，带实时模型目录与推理强度支持。 ★0.2k · [详情](https://dshmarketplace.dev/plugins/mars-sea-dsh-commandcode-provider)
+- [dsh-commandcode-provider](https://github.com/Mars-Sea/dsh-commandcode-provider) — 非官方 Command Code 模型接入插件：注册 `commandcode` 路由，带实时模型目录与推理强度支持。 ★0.4k · [详情](https://dshmarketplace.dev/plugins/mars-sea-dsh-commandcode-provider)
+- [dsh-oh-my-claude](https://github.com/lcestou/dsh-oh-my-claude) — 把已登录的 Claude Code CLI 作为 dsh 的模型提供商：实时模型列表、按会话恢复、审批中转、图片、记忆/回退/变更面板，以及远程 SSH 主机上的工作区。 ★0k
 
 ### Memory
 
@@ -105,7 +106,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 - [notes](https://github.com/zhaoolee/notes) — 将 DSH 对话导出为锤子便签风格 PNG，或在配置的账号工作区中新建和更新 Markdown 便签。 ★0.2k · [详情](https://dshmarketplace.dev/plugins/zhaoolee-notes)
 - [modsearch](https://github.com/liustack/modsearch) — 纯文本 agent 的联网搜索桥：搜索网页与 X，返回结构化 JSON 证据（search/fetch/引用）。 ★0.6k · [详情](https://dshmarketplace.dev/plugins/liustack-modsearch)
 - [dsh-undo-plugin](https://github.com/lire1131/dsh-undo-plugin) — DSH 撤销/回退系统：配置变更自动存档，一键撤销/恢复/回退到任意版本，支持 WebUI 与离线 CLI/GUI 工具（DSH 启动失败也能救）。 ★0.2k · [详情](https://dshmarketplace.dev/plugins/lire1131-dsh-undo-plugin)
-- [dsh-livedocs](https://github.com/sogoodayo/dsh-livedocs) — DSH 实时库文档：写代码前自动拉取项目安装版本的官方文档，消灭幻觉 API。零配置零 Key。Version-pinned live library docs for DeepSeek Harness — kill hallucinated APIs
+- [dsh-livedocs](https://github.com/sogoodayo/dsh-livedocs) — DSH 实时库文档：写代码前自动拉取项目安装版本的官方文档，消灭幻觉 API。零配置零 Key。Version-pinned live library docs for DeepSeek Harness — kill hallucinated APIs ★0k
 - [dsh-plugin-notify](https://github.com/GooDAnDReaDY/dsh-plugin-notify) — DSH plugin: audio chimes, cross-session toasts, desktop push, and IM webhooks for turn completion, errors, and approvals.
 - [qiaomu-rss-dsh](https://github.com/joeseesun/qiaomu-rss-dsh) — 在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness ★0k
 
@@ -181,7 +182,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 
 ## 📚 相关项目
 
-- **[DSH 插件市场](https://github.com/DshMarketPlace/dshmarketplace)** — 完整的 9909+ 插件目录
+- **[DSH 插件市场](https://github.com/DshMarketPlace/dshmarketplace)** — 完整的 10371+ 插件目录
 - **[dsh-plugins-store](https://github.com/DshMarketPlace/dsh-plugins-store)** — 可安装的市场插件
 - **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** — DSH 官方项目
 
