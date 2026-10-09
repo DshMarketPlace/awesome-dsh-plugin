@@ -40,6 +40,7 @@ categories:
       - repo: HanaAyane/dsh-reasoning-effort
       - repo: AITabby/dockyard-dsh
       - repo: Mars-Sea/dsh-commandcode-provider
+      - repo: lcestou/dsh-oh-my-claude
 
   - name: Memory
     slug: memory

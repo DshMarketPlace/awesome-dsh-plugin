@@ -1,6 +1,6 @@
 {
-  "total": 9909,
-  "count": 63,
+  "total": 10371,
+  "count": 64,
   "results": [
     {
       "fullName": "dsh-market/dsh-market",
@@ -665,7 +665,7 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-05T21:18:37.000Z",
+      "installCheckedAt": "2026-10-06T01:46:35.000Z",
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": false,
@@ -820,8 +820,8 @@
       "category": "model",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 207,
-      "pushedAt": "2026-09-11T07:37:48.000Z",
+      "stars": 361,
+      "pushedAt": "2026-10-04T02:36:07.000Z",
       "repoUrl": "https://github.com/Mars-Sea/dsh-commandcode-provider",
       "npmPackage": "@mars-sea/dsh-commandcode-provider",
       "installKind": "npm",
@@ -847,6 +847,45 @@
       ],
       "inRegistry": true,
       "url": "https://dshmarketplace.dev/plugins/mars-sea-dsh-commandcode-provider"
+    },
+    {
+      "fullName": "lcestou/dsh-oh-my-claude",
+      "name": "dsh-oh-my-claude",
+      "owner": "lcestou",
+      "repo": "dsh-oh-my-claude",
+      "subpath": null,
+      "summary": "Claude Code CLI as an LLM provider for dsh: live model list, per-session resume, approval relay, images, a memory/rewind/changes panel, and workspaces on remote SSH boxes.",
+      "summaryZh": "把已登录的 Claude Code CLI 作为 dsh 的模型提供商：实时模型列表、按会话恢复、审批中转、图片、记忆/回退/变更面板，以及远程 SSH 主机上的工作区。",
+      "category": "model",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 7,
+      "pushedAt": "2026-10-01T21:48:47.000Z",
+      "repoUrl": "https://github.com/lcestou/dsh-oh-my-claude",
+      "npmPackage": "dsh-oh-my-claude",
+      "installKind": "npm",
+      "install": "dsh plugin --profile web add dsh-oh-my-claude",
+      "installable": true,
+      "installOptions": [
+        {
+          "label": "npm",
+          "cmd": "dsh plugin --profile web add dsh-oh-my-claude",
+          "note": "Resolves a published tarball rather than cloning the repository, and installs without any extra setup. Swap `web` for your profile name if you run another one."
+        },
+        {
+          "label": "GitHub",
+          "cmd": "dsh plugin --profile web add github:lcestou/dsh-oh-my-claude",
+          "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
+        }
+      ],
+      "installCheck": "passed",
+      "installCheckedAt": "2026-09-11T21:56:23.000Z",
+      "blockedBuilds": [],
+      "riskFlags": [
+        "terminal surface"
+      ],
+      "inRegistry": true,
+      "url": "https://github.com/lcestou/dsh-oh-my-claude"
     },
     {
       "fullName": "csyangwen/dsh-memory-evolve",
@@ -1153,8 +1192,8 @@
       "category": null,
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 0,
-      "pushedAt": "2026-09-11T09:09:33.000Z",
+      "stars": 1,
+      "pushedAt": "2026-09-22T01:32:51.000Z",
       "repoUrl": "https://github.com/sogoodayo/dsh-livedocs",
       "npmPackage": "dsh-livedocs",
       "installKind": "npm",
