@@ -1,6 +1,6 @@
 {
   "total": 9909,
-  "count": 63,
+  "count": 64,
   "results": [
     {
       "fullName": "dsh-market/dsh-market",
@@ -2291,6 +2291,47 @@
       ],
       "inRegistry": true,
       "url": "https://dshmarketplace.dev/plugins/vlln-whale-girl"
+    },
+    {
+      "fullName": "DoveLi-Gu/dsh-dyou-wine",
+      "name": "dsh-dyou-wine",
+      "owner": "DoveLi-Gu",
+      "repo": "dsh-dyou-wine",
+      "subpath": null,
+      "summary": "D友の酒 · Dyou Wine：让 DSH 界面和鲸鱼娘玩偶按固定节奏 Q 弹，支持满屏飞行、碰墙反弹与内置 BGM。",
+      "summaryZh": null,
+      "category": "ui",
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "stars": 0,
+      "pushedAt": "2026-10-18T11:04:11.000Z",
+      "repoUrl": "https://github.com/DoveLi-Gu/dsh-dyou-wine",
+      "npmPackage": "dsh-dyou-wine",
+      "installKind": "npm",
+      "install": "dsh plugin --profile web add dsh-dyou-wine",
+      "installable": true,
+      "installOptions": [
+        {
+          "label": "npm",
+          "cmd": "dsh plugin --profile web add dsh-dyou-wine",
+          "note": "Resolves a published tarball rather than cloning the repository, and installs without any extra setup. Swap `web` for your profile name if you run another one."
+        },
+        {
+          "label": "GitHub",
+          "cmd": "dsh plugin --profile web add github:DoveLi-Gu/dsh-dyou-wine",
+          "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
+        }
+      ],
+      "installCheck": null,
+      "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
+      "blockedBuilds": [],
+      "riskFlags": [
+        "terminal surface"
+      ],
+      "inRegistry": false,
+      "url": "https://github.com/DoveLi-Gu/dsh-dyou-wine"
     }
   ]
 }

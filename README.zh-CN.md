@@ -167,6 +167,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 
 - [dsh-ads](https://github.com/Nagi-ovo/dsh-ads) — 2005 年中文站点风格的整活广告插件：侧栏广告/信息流/角落弹窗 + 假关闭叉，素材全虚构。 ★0.6k · [详情](https://dshmarketplace.dev/plugins/nagi-ovo-dsh-ads)
 - [whale-girl](https://github.com/vlln/whale-girl) — 桌面宠物（QQ 宠物形态）：右下角悬浮、可拖拽/投喂/玩耍。 ★0.3k · [详情](https://dshmarketplace.dev/plugins/vlln-whale-girl)
+- [dsh-dyou-wine](https://github.com/DoveLi-Gu/dsh-dyou-wine) — D友の酒 · Dyou Wine：让 DSH 界面和鲸鱼娘玩偶按固定节奏 Q 弹，支持满屏飞行、碰墙反弹与内置 BGM。
 
 ---
 

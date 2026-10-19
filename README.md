@@ -167,6 +167,7 @@ Essential plugins recommended for new DSH users:
 
 - [dsh-ads](https://github.com/Nagi-ovo/dsh-ads) — Parody ads in 2005-Chinese-web style: sidebar banners, in-chat feeds, corner popups, and a close button whose hit area is smaller than it looks. All fictional. ★0.6k · [Details](https://dshmarketplace.dev/plugins/nagi-ovo-dsh-ads)
 - [whale-girl](https://github.com/vlln/whale-girl) — Desktop pet (QQ-pet style): floats in the corner, draggable, feedable, playable. ★0.3k · [Details](https://dshmarketplace.dev/plugins/vlln-whale-girl)
+- [dsh-dyou-wine](https://github.com/DoveLi-Gu/dsh-dyou-wine) — D友の酒 · Dyou Wine：让 DSH 界面和鲸鱼娘玩偶按固定节奏 Q 弹，支持满屏飞行、碰墙反弹与内置 BGM。
 
 ---
 
