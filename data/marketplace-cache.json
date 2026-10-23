@@ -1,6 +1,6 @@
 {
   "total": 9909,
-  "count": 63,
+  "count": 64,
   "results": [
     {
       "fullName": "dsh-market/dsh-market",
@@ -2291,6 +2291,40 @@
       ],
       "inRegistry": true,
       "url": "https://dshmarketplace.dev/plugins/vlln-whale-girl"
+    },
+    {
+      "fullName": "jryang1997/dsh-ascii-whales",
+      "name": "dsh-ascii-whales",
+      "owner": "jryang1997",
+      "repo": "dsh-ascii-whales",
+      "subpath": null,
+      "summary": "Overhead conversation background with five whale species formed from custom text or ASCII, shaded cells, frosted content cards, input-box avoidance, independent dives, spouts, ripples, wind, and cloud shadows.",
+      "summaryZh": "海面正上方俯视的对话背景，支持用自定义文字或 ASCII 组成五种鲸类，含彩色字格、内容框毛玻璃、输入框避让、独立下潜、喷水、尾拍涟漪、风纹与云影。",
+      "category": "theme",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars": 1,
+      "pushedAt": "2026-10-23T07:03:00.000Z",
+      "repoUrl": "https://github.com/jryang1997/dsh-ascii-whales",
+      "npmPackage": null,
+      "installKind": "github",
+      "install": "dsh plugin --profile web add github:jryang1997/dsh-ascii-whales",
+      "installable": true,
+      "installOptions": [
+        {
+          "label": "GitHub",
+          "cmd": "dsh plugin --profile web add github:jryang1997/dsh-ascii-whales",
+          "note": "Clones the repository directly from GitHub. Swap `web` for your profile name if you run another one."
+        }
+      ],
+      "installCheck": null,
+      "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
+      "blockedBuilds": [],
+      "riskFlags": [],
+      "inRegistry": false,
+      "url": "https://github.com/jryang1997/dsh-ascii-whales"
     }
   ]
 }
