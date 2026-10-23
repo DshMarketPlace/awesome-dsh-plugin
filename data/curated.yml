@@ -80,6 +80,7 @@ categories:
       - repo: icetomoyo/dsh_workflow
       - repo: btspoony/mstar-harness
       - repo: titanwings/dsh-automation
+      - repo: shiyan688/dsh-novel-craft
 
   - name: Skills
     slug: skill
