@@ -105,6 +105,7 @@ categories:
       - repo: kingOfSoySauce/dsh-liang-skin
       - repo: GGBond2424648901/deep-whale-day-night-theme
       - repo: RevolutionLA/dsh-dream-skin
+      - repo: jryang1997/dsh-ascii-whales
 
   - name: Plugin Managers & Marketplaces
     slug: market

@@ -147,6 +147,7 @@ Essential plugins recommended for new DSH users:
 - [dsh-liang-skin](https://github.com/kingOfSoySauce/dsh-liang-skin) — Adaptive reasoning slider skin that maps each model's available reasoning efforts onto a 0–30 visual intensity scale, with synchronized portraits, background, and interface colors. ★0.2k
 - [deep-whale-day-night-theme](https://github.com/GGBond2424648901/deep-whale-day-night-theme) — Non-commercial day/night whale-girl skin for official Harness rc.7: current no-viewport-frame layout, paired crystal-workshop and moon-tide scenes, chibi companions, translucent ornaments, and lightweight ambience. ★0.1k · [Details](https://dshmarketplace.dev/plugins/ggbond2424648901-deep-whale-day-night-theme)
 - [dsh-dream-skin](https://github.com/RevolutionLA/dsh-dream-skin) — One-command skin plugin: 8 original themes, translucent wallpaper with opacity/blur, per-user accent, and shareable theme-pack import/export, favorites and surprise-me — purely native on DSH's token system. ★0.2k · [Details](https://dshmarketplace.dev/plugins/revolutionla-dsh-dream-skin)
+- [dsh-ascii-whales](https://github.com/jryang1997/dsh-ascii-whales) — Overhead conversation background with five whale species formed from custom text or ASCII, shaded cells, frosted content cards, input-box avoidance, independent dives, spouts, ripples, wind, and cloud shadows.
 
 ### Plugin Managers & Marketplaces
 
