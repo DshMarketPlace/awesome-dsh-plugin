@@ -32,6 +32,7 @@ categories:
       - repo: jeffreyren1/dsh-custom-js
       - repo: Ephemeral-AI-Lab/mayfly
       - repo: Ytibu/dsh-agents-md
+      - repo: Hongcheng-LI/dsh-magpie
 
   - name: Models & Providers
     slug: model
