@@ -490,7 +490,7 @@
       "repo": "dsh-better-left-sidebar",
       "subpath": null,
       "summary": "A cleaner, better-organized DeepSeek Harness sidebar with support for multiple plugin-defined widgets.",
-      "summaryZh": null,
+      "summaryZh": "更清爽、更合理的 DeepSeek Harness 左边栏，支持插件自定义多个小组件。",
       "category": "session",
       "language": "JavaScript",
       "license": "Apache-2.0",
