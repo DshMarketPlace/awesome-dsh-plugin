@@ -1,6 +1,6 @@
 {
-  "total": 9909,
-  "count": 63,
+  "total": 15545,
+  "count": 64,
   "results": [
     {
       "fullName": "dsh-market/dsh-market",
@@ -13,8 +13,8 @@
       "category": "market",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 4698,
-      "pushedAt": "2026-09-27T16:27:27.000Z",
+      "stars": 7988,
+      "pushedAt": "2026-10-21T18:45:14.000Z",
       "repoUrl": "https://github.com/dsh-market/dsh-market",
       "npmPackage": "dshmarket",
       "installKind": "npm",
@@ -33,7 +33,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface",
@@ -53,8 +55,8 @@
       "category": "ui",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 3865,
-      "pushedAt": "2026-09-28T16:45:35.000Z",
+      "stars": 4479,
+      "pushedAt": "2026-10-23T13:44:37.000Z",
       "repoUrl": "https://github.com/omdsh-dev/DSH-better-sidebar",
       "npmPackage": "dsh-better-sidebar",
       "installKind": "npm",
@@ -73,10 +75,10 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
-      "blockedBuilds": [
-        "node-pty@1.1.0"
-      ],
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
+      "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
       ],
@@ -94,8 +96,8 @@
       "category": "vision",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 884,
-      "pushedAt": "2026-09-26T12:25:51.000Z",
+      "stars": 906,
+      "pushedAt": "2026-10-24T18:52:03.000Z",
       "repoUrl": "https://github.com/Anionex/dsh-vision-toolkit",
       "npmPackage": "@anionex/dsh-vision-toolkit",
       "installKind": "npm",
@@ -113,8 +115,34 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": null,
+        "status": "none",
+        "requires": {
+          "@deepseek-ai/dsh-llm": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-agent": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-skill": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-tools": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-session": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-settings": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-attachment": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-subprocess": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-api-remotes": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-credentials": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-locale": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-tool": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-host-webserver": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-storage-domain": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-slots": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-settings": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-primitives": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-conversation": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-input-trigger": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -131,7 +159,7 @@
       "category": "memory",
       "language": "Python",
       "license": "MIT",
-      "stars": 191,
+      "stars": 195,
       "pushedAt": "2026-09-24T03:16:00.000Z",
       "repoUrl": "https://github.com/tinqiao-oss/engramory",
       "npmPackage": null,
@@ -146,7 +174,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface",
@@ -166,8 +196,8 @@
       "category": "workflow",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 1798,
-      "pushedAt": "2026-09-24T19:22:29.000Z",
+      "stars": 2240,
+      "pushedAt": "2026-10-18T04:19:48.000Z",
       "repoUrl": "https://github.com/NanmiCoder/dsh-agent-teams",
       "npmPackage": "@nanmicoder/dsh-agent-teams",
       "installKind": "npm",
@@ -185,8 +215,36 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": null,
+        "status": "none",
+        "requires": {
+          "@deepseek-ai/dsh-llm": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-agent": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-tools": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-session": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-commands": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-subagent": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-util-values": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-store": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-locale": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-system-prompt": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-ui-chat": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-ui-slots": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-ui-layout": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-connection": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-ui-session": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-ui-renderer": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-session-projection": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-ui-primitives": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-api-session-controller": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-ui-conversation": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2",
+          "@deepseek-ai/dsh-client-ui-model-selection": "0.2.1-rc.3 || 0.2.1-rc.2 || 0.2.1-rc.1 || 0.2.0-rc.2 || 0.1.7-rc.2 || 0.1.5-rc.3 || 0.1.5-rc.2 || 0.1.5-rc.1 || 0.1.2-rc.1 || 0.1.2-alpha.5 || 0.1.2-alpha.2"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -205,8 +263,8 @@
       "category": "tools",
       "language": "Python",
       "license": "NOASSERTION",
-      "stars": 3737,
-      "pushedAt": "2026-09-28T20:40:49.000Z",
+      "stars": 6013,
+      "pushedAt": "2026-10-23T14:44:42.000Z",
       "repoUrl": "https://github.com/superdesigndev/treg",
       "npmPackage": null,
       "installKind": "github",
@@ -220,7 +278,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -239,8 +299,8 @@
       "category": "skill",
       "language": "Python",
       "license": "MIT",
-      "stars": 2098,
-      "pushedAt": "2026-08-11T15:39:41.000Z",
+      "stars": 2470,
+      "pushedAt": "2026-10-05T16:15:11.000Z",
       "repoUrl": "https://github.com/Alisa0808/vox-director",
       "npmPackage": null,
       "installKind": "github",
@@ -254,7 +314,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -273,8 +335,8 @@
       "category": "vision",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 4051,
-      "pushedAt": "2026-09-27T20:45:40.000Z",
+      "stars": 4409,
+      "pushedAt": "2026-10-15T19:22:02.000Z",
       "repoUrl": "https://github.com/liustack/modlens",
       "npmPackage": "@liustack/modlens",
       "installKind": "npm",
@@ -293,7 +355,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -312,8 +376,8 @@
       "category": "ui",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 3343,
-      "pushedAt": "2026-09-26T21:32:47.000Z",
+      "stars": 5109,
+      "pushedAt": "2026-10-21T22:15:05.000Z",
       "repoUrl": "https://github.com/ccch1mneyyy/dsh-TUI",
       "npmPackage": "@deepseek-harness-tui/dsh-tui",
       "installKind": "npm",
@@ -331,8 +395,51 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": null,
+        "status": "none",
+        "requires": {
+          "@deepseek-ai/dsh-llm": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-agent": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-scope": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-skill": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-cmdline": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-persona": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-session": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-storage": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-web-app": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-app-boot": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-commands": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-settings": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-terminal": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-llm-pi-ai": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-workspace": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-home-paths": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-http-proxy": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-tool-cordis": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-atomic-write": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-storage-json": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-terminal-bash": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-tool-ask-user": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-tool-subagent": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-user-approval": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-host-webserver": "0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-plugin-manager": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-storage-domain": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-user-questions": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-deepseek-account": "0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-ptc-runtime-node": "0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-agent-instructions": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-cordis-host-runner": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-launch-environment": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-tool-bash-persistent": "^0.1.0-rc.6 || ^0.1.1-rc.1 || 0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5 || 0.1.2-rc.1 || 0.1.3-alpha.2 || 0.1.5-alpha.1 || 0.1.5-alpha.2 || 0.1.5-rc.1 || 0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-agent-preset-registry": "0.1.7-rc.1 || 0.1.7-rc.2 || 0.2.0-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -351,8 +458,8 @@
       "category": "skill",
       "language": "Python",
       "license": "MIT",
-      "stars": 1263,
-      "pushedAt": "2026-09-23T03:30:40.000Z",
+      "stars": 1356,
+      "pushedAt": "2026-10-17T07:15:02.000Z",
       "repoUrl": "https://github.com/GanyuanRan/Aegis",
       "npmPackage": null,
       "installKind": "github",
@@ -366,13 +473,54 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-23T22:34:04.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
       ],
       "inRegistry": true,
       "url": "https://dshmarketplace.dev/plugins/ganyuanran-aegis"
+    },
+    {
+      "fullName": "exoticknight/dsh-better-left-sidebar",
+      "name": "dsh-better-left-sidebar",
+      "owner": "exoticknight",
+      "repo": "dsh-better-left-sidebar",
+      "subpath": null,
+      "summary": "A cleaner, better-organized DeepSeek Harness sidebar with support for multiple plugin-defined widgets.",
+      "summaryZh": null,
+      "category": "session",
+      "language": "JavaScript",
+      "license": "Apache-2.0",
+      "stars": 0,
+      "pushedAt": "2026-10-31T15:57:24.000Z",
+      "repoUrl": "https://github.com/exoticknight/dsh-better-left-sidebar",
+      "npmPackage": "dsh-better-left-sidebar",
+      "installKind": "npm",
+      "install": "dsh plugin --profile web add dsh-better-left-sidebar",
+      "installable": true,
+      "installOptions": [
+        {
+          "label": "npm",
+          "cmd": "dsh plugin --profile web add dsh-better-left-sidebar",
+          "note": "Resolves a published tarball rather than cloning the repository, and installs without any extra setup. Swap `web` for your profile name if you run another one."
+        },
+        {
+          "label": "GitHub",
+          "cmd": "dsh plugin --profile web add github:exoticknight/dsh-better-left-sidebar",
+          "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
+        }
+      ],
+      "installCheck": null,
+      "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
+      "blockedBuilds": [],
+      "riskFlags": [],
+      "inRegistry": false,
+      "url": "https://github.com/exoticknight/dsh-better-left-sidebar"
     },
     {
       "fullName": "omdsh-dev/dsh-at-file",
@@ -385,7 +533,7 @@
       "category": "ui",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 511,
+      "stars": 533,
       "pushedAt": "2026-09-01T01:00:35.000Z",
       "repoUrl": "https://github.com/omdsh-dev/dsh-at-file",
       "npmPackage": "dsh-at-file",
@@ -405,7 +553,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -422,8 +572,8 @@
       "category": "ui",
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "stars": 284,
-      "pushedAt": "2026-09-19T15:53:03.000Z",
+      "stars": 289,
+      "pushedAt": "2026-09-30T11:13:01.000Z",
       "repoUrl": "https://github.com/huiliyi37/dsh-tianshu-tui",
       "npmPackage": "@huiliyi37/dsh-tianshu-tui",
       "installKind": "npm",
@@ -442,7 +592,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -461,8 +613,8 @@
       "category": "ui",
       "language": "TypeScript",
       "license": "BSD-3-Clause",
-      "stars": 265,
-      "pushedAt": "2026-09-18T23:09:28.000Z",
+      "stars": 309,
+      "pushedAt": "2026-10-18T06:44:32.000Z",
       "repoUrl": "https://github.com/Nagi-ovo/dsh-visualize",
       "npmPackage": "@nagi-ovo/dsh-visualize",
       "installKind": "npm",
@@ -481,7 +633,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -498,7 +652,7 @@
       "category": "ui",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 2,
+      "stars": 3,
       "pushedAt": "2026-09-10T20:20:27.000Z",
       "repoUrl": "https://github.com/mrSutivu/plugin-effort-slider",
       "npmPackage": "plugin-effort-slider",
@@ -518,7 +672,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-10T21:47:29.000Z",
+      "installCheckedAt": "2026-10-18T19:46:53.000Z",
+      "installCheckDsh": "0.2.0-rc.2",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -536,7 +692,7 @@
       "language": "JavaScript",
       "license": "MIT",
       "stars": 1,
-      "pushedAt": "2026-09-14T01:16:10.000Z",
+      "pushedAt": "2026-10-13T08:30:13.000Z",
       "repoUrl": "https://github.com/sogoodayo/dsh-code-ui",
       "npmPackage": "dsh-code-ui",
       "installKind": "npm",
@@ -556,6 +712,8 @@
       ],
       "installCheck": "passed",
       "installCheckedAt": "2026-09-08T21:57:00.000Z",
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -574,8 +732,8 @@
       "category": "ui",
       "language": "JavaScript",
       "license": "Apache-2.0",
-      "stars": 0,
-      "pushedAt": "2026-09-15T08:47:05.000Z",
+      "stars": 1,
+      "pushedAt": "2026-10-06T15:31:09.000Z",
       "repoUrl": "https://github.com/exoticknight/dsh-just-chat",
       "npmPackage": "dsh-just-chat",
       "installKind": "npm",
@@ -595,6 +753,8 @@
       ],
       "installCheck": null,
       "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -606,8 +766,8 @@
       "owner": "jeffreyren1",
       "repo": "dsh-custom-js",
       "subpath": null,
-      "summary": "Customize DeepSeek Harness without forking it—load, edit, manage, and hot-reload trusted JavaScript and TypeScript userscripts from the Web UI.自定义 DeepSeek Harness，无需 Fork——直接在 Web UI 中加载、编辑、管理并热重载可信的 JavaScript 和 TypeScript 用户脚本。",
-      "summaryZh": null,
+      "summary": "Load, edit, manage, and hot-reload trusted JavaScript and TypeScript userscripts in DeepSeek Harness.",
+      "summaryZh": "在 DeepSeek Harness 中加载、编辑、管理和热重载可信的 JavaScript / TypeScript 用户脚本。",
       "category": "ui",
       "language": "TypeScript",
       "license": "MIT",
@@ -632,11 +792,13 @@
       ],
       "installCheck": null,
       "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
       ],
-      "inRegistry": false,
+      "inRegistry": true,
       "url": "https://github.com/jeffreyren1/dsh-custom-js"
     },
     {
@@ -650,8 +812,8 @@
       "category": "ui",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 7,
-      "pushedAt": "2026-09-26T17:16:39.000Z",
+      "stars": 22,
+      "pushedAt": "2026-10-21T19:34:57.000Z",
       "repoUrl": "https://github.com/Ephemeral-AI-Lab/mayfly",
       "npmPackage": null,
       "installKind": "github",
@@ -665,7 +827,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-05T21:18:37.000Z",
+      "installCheckedAt": "2026-10-30T23:31:55.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": false,
@@ -682,7 +846,7 @@
       "category": null,
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 0,
+      "stars": 1,
       "pushedAt": "2026-10-01T18:28:55.000Z",
       "repoUrl": "https://github.com/Ytibu/dsh-agents-md",
       "npmPackage": null,
@@ -698,6 +862,8 @@
       ],
       "installCheck": null,
       "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": false,
@@ -714,8 +880,8 @@
       "category": "tools",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 441,
-      "pushedAt": "2026-09-20T09:34:50.000Z",
+      "stars": 664,
+      "pushedAt": "2026-10-10T08:54:47.000Z",
       "repoUrl": "https://github.com/anysearch-team/anysearch-dsh",
       "npmPackage": "@anysearch/anysearch-dsh",
       "installKind": "npm",
@@ -734,7 +900,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -746,19 +914,24 @@
       "owner": "HanaAyane",
       "repo": "dsh-reasoning-effort",
       "subpath": null,
-      "summary": "DSH适用的Codex风格的思考强度滑块，以及大肥鱼跑步滑块。Codex-style model and reasoning-effort slider for DeepSeek Harness",
-      "summaryZh": null,
-      "category": "model",
+      "summary": "Adds an animated DeepSeek Chan reasoning-effort slider to DSH's native model selector, following model-declared levels with a running animation that speeds up while dragging.",
+      "summaryZh": "为 DSH 原生模型选择器加入大肥鱼思考强度滑块，按模型声明的档位调节推理强度，拖动时奔跑动画随之加速。",
+      "category": "ui",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 168,
-      "pushedAt": "2026-09-29T13:43:10.000Z",
+      "stars": 250,
+      "pushedAt": "2026-10-23T08:17:01.000Z",
       "repoUrl": "https://github.com/HanaAyane/dsh-reasoning-effort",
-      "npmPackage": null,
-      "installKind": "github",
-      "install": "dsh plugin --profile web add github:HanaAyane/dsh-reasoning-effort",
+      "npmPackage": "@ayanehana/dsh-reasoning-effort",
+      "installKind": "npm",
+      "install": "dsh plugin --profile web add @ayanehana/dsh-reasoning-effort",
       "installable": true,
       "installOptions": [
+        {
+          "label": "npm",
+          "cmd": "dsh plugin --profile web add @ayanehana/dsh-reasoning-effort",
+          "note": "Resolves a published tarball rather than cloning the repository, and installs without any extra setup. Swap `web` for your profile name if you run another one."
+        },
         {
           "label": "GitHub",
           "cmd": "dsh plugin --profile web add github:HanaAyane/dsh-reasoning-effort",
@@ -766,10 +939,12 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-30T23:14:04.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
-      "inRegistry": false,
+      "inRegistry": true,
       "url": "https://github.com/HanaAyane/dsh-reasoning-effort"
     },
     {
@@ -783,8 +958,8 @@
       "category": "model",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 79,
-      "pushedAt": "2026-09-30T05:04:19.000Z",
+      "stars": 76,
+      "pushedAt": "2026-10-23T03:03:32.000Z",
       "repoUrl": "https://github.com/AITabby/dockyard-dsh",
       "npmPackage": null,
       "installKind": "github",
@@ -798,7 +973,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [
         "@google/genai@1.52.0",
         "protobufjs@7.6.6"
@@ -820,8 +997,8 @@
       "category": "model",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 207,
-      "pushedAt": "2026-09-11T07:37:48.000Z",
+      "stars": 445,
+      "pushedAt": "2026-10-30T15:25:12.000Z",
       "repoUrl": "https://github.com/Mars-Sea/dsh-commandcode-provider",
       "npmPackage": "@mars-sea/dsh-commandcode-provider",
       "installKind": "npm",
@@ -840,7 +1017,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -854,12 +1033,12 @@
       "owner": "csyangwen",
       "repo": "dsh-memory-evolve",
       "subpath": null,
-      "summary": "为 DeepSeek Harness 带来「跨会话长期记忆 + 后台自我进化」能力的纯插件实现：五轨记忆 · git 分支感知 · 回合内自我审查 · 技能自我进化与技能管理器 · 四轨待办 · COI 调度 · 会话广播 · 会话搜索 · 提示词管理器 · 临时信息便签——零核心修改、零运行时依赖，随装随用、卸载即净。",
-      "summaryZh": null,
+      "summary": "A purely plugin-based implementation that brings \"cross-session long-term memory + background self-evolution\" capabilities to DeepSeek Harness: five-track memory · git branch awareness · in-turn self-review · skill self-evolution and skill manager · four-track to-do · COI scheduling · session broadcast · session search · prompt manager · temporary info notes—zero core modifications, zero runtime dependencies, ready to use upon installation and completely removable upon uninstallation.",
+      "summaryZh": "为 DeepSeek Harness 带来「跨会话长期记忆 + 后台自我进化」能力的纯插件实现：五轨记忆 · git 分支感知 · 回合内自我审查 · 技能自我进化与技能管理器 · 四轨待办 · COI 调度 · 会话广播 · 会话搜索 · 提示词管理器 · 临时信息便签——零核心修改、零运行时依赖，随装随用、卸载即净。",
       "category": "memory",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 343,
+      "stars": 445,
       "pushedAt": "2026-09-29T12:52:46.000Z",
       "repoUrl": "https://github.com/csyangwen/dsh-memory-evolve",
       "npmPackage": null,
@@ -874,12 +1053,14 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
       ],
-      "inRegistry": false,
+      "inRegistry": true,
       "url": "https://github.com/csyangwen/dsh-memory-evolve"
     },
     {
@@ -893,8 +1074,8 @@
       "category": "usage",
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "stars": 1536,
-      "pushedAt": "2026-09-26T18:15:56.000Z",
+      "stars": 3120,
+      "pushedAt": "2026-10-21T18:13:42.000Z",
       "repoUrl": "https://github.com/bowenliang123/dsh-context",
       "npmPackage": "dsh-context",
       "installKind": "npm",
@@ -913,7 +1094,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -930,8 +1113,8 @@
       "category": "memory",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 128,
-      "pushedAt": "2026-09-24T21:40:23.000Z",
+      "stars": 133,
+      "pushedAt": "2026-10-06T08:23:06.000Z",
       "repoUrl": "https://github.com/ZSeven-W/dsh-noema",
       "npmPackage": "@zseven-w/dsh-noema",
       "installKind": "npm",
@@ -950,7 +1133,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -969,7 +1154,7 @@
       "category": "memory",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 12,
+      "stars": 11,
       "pushedAt": "2026-08-22T08:12:03.000Z",
       "repoUrl": "https://github.com/Co-Engram/Co-Engram",
       "npmPackage": null,
@@ -984,7 +1169,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-22T22:12:05.000Z",
+      "installCheckedAt": "2026-11-01T00:15:30.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface",
@@ -1004,8 +1191,8 @@
       "category": "tools",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 726,
-      "pushedAt": "2026-09-22T08:26:24.000Z",
+      "stars": 842,
+      "pushedAt": "2026-10-01T07:58:07.000Z",
       "repoUrl": "https://github.com/Lum1104/dsh-browser",
       "npmPackage": null,
       "installKind": "github",
@@ -1019,9 +1206,11 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [
-        "@deepseek-ai/dsh-subprocess-local@0.1.5-rc.2"
+        "@deepseek-ai/dsh-subprocess-local@0.2.0-rc.2"
       ],
       "riskFlags": [
         "terminal surface",
@@ -1041,8 +1230,8 @@
       "category": "tools",
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "stars": 175,
-      "pushedAt": "2026-09-29T04:02:04.000Z",
+      "stars": 312,
+      "pushedAt": "2026-10-23T01:55:19.000Z",
       "repoUrl": "https://github.com/zhaoolee/notes",
       "npmPackage": null,
       "installKind": "github",
@@ -1056,7 +1245,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1075,8 +1266,8 @@
       "category": "browser",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 558,
-      "pushedAt": "2026-09-24T07:05:54.000Z",
+      "stars": 809,
+      "pushedAt": "2026-10-18T16:23:15.000Z",
       "repoUrl": "https://github.com/liustack/modsearch",
       "npmPackage": "@liustack/modsearch",
       "installKind": "npm",
@@ -1095,7 +1286,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1114,8 +1307,8 @@
       "category": "tools",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 165,
-      "pushedAt": "2026-09-20T05:24:15.000Z",
+      "stars": 188,
+      "pushedAt": "2026-10-20T14:35:24.000Z",
       "repoUrl": "https://github.com/lire1131/dsh-undo-plugin",
       "npmPackage": "dsh-undo-savepoint",
       "installKind": "npm",
@@ -1134,7 +1327,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1153,8 +1348,8 @@
       "category": null,
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 0,
-      "pushedAt": "2026-09-11T09:09:33.000Z",
+      "stars": 1,
+      "pushedAt": "2026-10-26T08:01:03.000Z",
       "repoUrl": "https://github.com/sogoodayo/dsh-livedocs",
       "npmPackage": "dsh-livedocs",
       "installKind": "npm",
@@ -1174,6 +1369,8 @@
       ],
       "installCheck": null,
       "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1192,8 +1389,8 @@
       "category": "notify",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 0,
-      "pushedAt": "2026-09-25T19:41:50.000Z",
+      "stars": 1,
+      "pushedAt": "2026-10-26T07:59:37.000Z",
       "repoUrl": "https://github.com/GooDAnDReaDY/dsh-plugin-notify",
       "npmPackage": "@goodandready/dsh-plugin-notify",
       "installKind": "npm",
@@ -1213,6 +1410,8 @@
       ],
       "installCheck": null,
       "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": false,
@@ -1224,13 +1423,13 @@
       "owner": "joeseesun",
       "repo": "qiaomu-rss-dsh",
       "subpath": null,
-      "summary": "在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness",
-      "summaryZh": null,
-      "category": null,
+      "summary": "Read RSS feeds, retrieve podcast transcripts, collect web links for rewrites, and discuss articles in native Harness conversations.",
+      "summaryZh": "阅读 RSS、获取播客原文、收录网页并生成改写，在 Harness 原生对话中伴读。",
+      "category": "tools",
       "language": "JavaScript",
       "license": "GPL-3.0",
-      "stars": 8,
-      "pushedAt": "2026-09-30T15:55:14.000Z",
+      "stars": 46,
+      "pushedAt": "2026-10-19T09:04:56.000Z",
       "repoUrl": "https://github.com/joeseesun/qiaomu-rss-dsh",
       "npmPackage": null,
       "installKind": "github",
@@ -1243,13 +1442,21 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-30T23:14:04.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-30T23:31:55.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": null,
+        "status": "untried",
+        "requires": {
+          "engines.dsh": "0.2.1-rc.2 || 0.2.1-rc.3"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
       ],
-      "inRegistry": false,
+      "inRegistry": true,
       "url": "https://github.com/joeseesun/qiaomu-rss-dsh"
     },
     {
@@ -1263,8 +1470,8 @@
       "category": "vision",
       "language": "Python",
       "license": "MIT",
-      "stars": 1219,
-      "pushedAt": "2026-08-27T05:13:05.000Z",
+      "stars": 1250,
+      "pushedAt": "2026-10-13T09:12:47.000Z",
       "repoUrl": "https://github.com/Anionex/agent-vision-toolkit",
       "npmPackage": null,
       "installKind": "github",
@@ -1278,7 +1485,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1297,8 +1506,8 @@
       "category": "vision",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 1129,
-      "pushedAt": "2026-09-29T20:22:17.000Z",
+      "stars": 1172,
+      "pushedAt": "2026-10-24T06:47:31.000Z",
       "repoUrl": "https://github.com/ysr666/dsh-vision-router",
       "npmPackage": "dsh-vision-router",
       "installKind": "npm",
@@ -1317,7 +1526,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1351,7 +1562,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-20T21:35:46.000Z",
+      "installCheckedAt": "2026-10-30T23:31:55.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1371,7 +1584,7 @@
       "language": "JavaScript",
       "license": "Apache-2.0",
       "stars": 2,
-      "pushedAt": "2026-09-14T14:20:40.000Z",
+      "pushedAt": "2026-10-06T15:31:18.000Z",
       "repoUrl": "https://github.com/exoticknight/dsh-labnana",
       "npmPackage": "dsh-labnana",
       "installKind": "npm",
@@ -1390,7 +1603,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-03T21:56:43.000Z",
+      "installCheckedAt": "2026-10-18T19:46:53.000Z",
+      "installCheckDsh": "0.2.0-rc.2",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1409,8 +1624,8 @@
       "category": "browser",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 101,
-      "pushedAt": "2026-09-10T11:07:36.000Z",
+      "stars": 115,
+      "pushedAt": "2026-10-14T07:43:13.000Z",
       "repoUrl": "https://github.com/Tabbit-Browser/dsh-plugin",
       "npmPackage": "dsh-tabbit",
       "installKind": "npm",
@@ -1429,7 +1644,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1448,8 +1665,8 @@
       "category": "workflow",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 130,
-      "pushedAt": "2026-09-05T04:10:09.000Z",
+      "stars": 147,
+      "pushedAt": "2026-10-14T01:10:07.000Z",
       "repoUrl": "https://github.com/icetomoyo/dsh_workflow",
       "npmPackage": null,
       "installKind": "github",
@@ -1462,8 +1679,26 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": null,
+        "status": "untried",
+        "requires": {
+          "@deepseek-ai/dsh-agent": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-commands": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-jobs": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-llm": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-session": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-subagent": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-tools": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-user-approval": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-user-questions": "^0.0.1-rc.2",
+          "@deepseek-ai/dsh-workflow": "^0.0.1-rc.2"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1482,8 +1717,8 @@
       "category": "workflow",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 62,
-      "pushedAt": "2026-09-26T10:55:22.000Z",
+      "stars": 65,
+      "pushedAt": "2026-10-21T19:58:36.000Z",
       "repoUrl": "https://github.com/btspoony/mstar-harness",
       "npmPackage": null,
       "installKind": "github",
@@ -1497,7 +1732,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-20T21:35:46.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1531,7 +1768,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1550,7 +1789,7 @@
       "category": "skill",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 612,
+      "stars": 894,
       "pushedAt": "2026-08-21T05:23:23.000Z",
       "repoUrl": "https://github.com/superdesigndev/superdesign-skill",
       "npmPackage": null,
@@ -1565,7 +1804,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1584,8 +1825,8 @@
       "category": "memory",
       "language": "Python",
       "license": "Apache-2.0",
-      "stars": 504,
-      "pushedAt": "2026-09-23T21:40:57.000Z",
+      "stars": 527,
+      "pushedAt": "2026-10-17T20:50:44.000Z",
       "repoUrl": "https://github.com/Ikalus1988/MisakaNet",
       "npmPackage": "misakanet",
       "installKind": "npm",
@@ -1604,7 +1845,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1623,8 +1866,8 @@
       "category": "skill",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 418,
-      "pushedAt": "2026-09-30T03:38:56.000Z",
+      "stars": 501,
+      "pushedAt": "2026-10-23T10:37:42.000Z",
       "repoUrl": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
       "npmPackage": null,
       "installKind": "github",
@@ -1638,7 +1881,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [
         "esbuild@0.21.5",
         "vue-demi@0.14.10"
@@ -1660,8 +1905,8 @@
       "category": "session",
       "language": "JavaScript",
       "license": "BSD-3-Clause",
-      "stars": 122,
-      "pushedAt": "2026-09-26T11:30:44.000Z",
+      "stars": 138,
+      "pushedAt": "2026-10-18T02:30:38.000Z",
       "repoUrl": "https://github.com/Anionex/dsh-turn-rewind",
       "npmPackage": "@anionex/dsh-turn-rewind",
       "installKind": "npm",
@@ -1679,8 +1924,16 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": "0.1.2",
+        "status": "passed",
+        "requires": {
+          "@deepseek-ai/dsh-settings": "0.2.1-rc.3 || >=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -1697,8 +1950,8 @@
       "category": "session",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 70,
-      "pushedAt": "2026-08-15T18:18:39.000Z",
+      "stars": 77,
+      "pushedAt": "2026-10-15T06:20:10.000Z",
       "repoUrl": "https://github.com/eri64/dsh-claude-ux",
       "npmPackage": null,
       "installKind": "github",
@@ -1712,7 +1965,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1731,8 +1986,8 @@
       "category": "session",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 198,
-      "pushedAt": "2026-09-23T17:57:14.000Z",
+      "stars": 238,
+      "pushedAt": "2026-10-17T12:56:35.000Z",
       "repoUrl": "https://github.com/Nwflower/dsh-chat-import",
       "npmPackage": "dsh-chat-import",
       "installKind": "npm",
@@ -1751,7 +2006,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1766,12 +2023,12 @@
       "repo": "dsh-prompt-profiles",
       "subpath": null,
       "summary": "Per-session prompt profiles for DeepSeek Harness: reusable system-prompt sections, grouped into named profiles, sealed into the session prompt.",
-      "summaryZh": null,
-      "category": "session",
+      "summaryZh": "DeepSeek Harness 的按会话提示词配置：可复用的系统提示词片段组成命名配置，并在会话启动时固化进该会话的提示词。",
+      "category": "identity",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 0,
-      "pushedAt": "2026-09-28T18:25:48.000Z",
+      "stars": 1,
+      "pushedAt": "2026-10-19T03:16:16.000Z",
       "repoUrl": "https://github.com/knopki/dsh-prompt-profiles",
       "npmPackage": "@knopki/dsh-prompt-profiles",
       "installKind": "npm",
@@ -1791,11 +2048,13 @@
       ],
       "installCheck": null,
       "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
       ],
-      "inRegistry": false,
+      "inRegistry": true,
       "url": "https://github.com/knopki/dsh-prompt-profiles"
     },
     {
@@ -1809,7 +2068,7 @@
       "category": "theme",
       "language": "JavaScript",
       "license": "AGPL-3.0",
-      "stars": 409,
+      "stars": 424,
       "pushedAt": "2026-08-22T02:10:10.000Z",
       "repoUrl": "https://github.com/WYH66666666/DSH-Transparent-UI-Plugin",
       "npmPackage": null,
@@ -1823,8 +2082,23 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": null,
+        "status": "untried",
+        "requires": {
+          "@deepseek-ai/dsh-client-locale": "^0.1.0-rc.5",
+          "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.5",
+          "@deepseek-ai/dsh-client-ui-primitives": "^0.1.0-rc.5",
+          "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.5",
+          "@deepseek-ai/dsh-client-ui-settings-plugins": "^0.1.0-rc.5",
+          "@deepseek-ai/dsh-client-ui-slots": "^0.1.0-rc.5",
+          "@deepseek-ai/dsh-client-ui-theme": "^0.1.0-rc.5",
+          "@deepseek-ai/dsh-invariants": "^0.1.0-rc.5"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": false,
@@ -1839,16 +2113,21 @@
       "summary": "Adaptive reasoning slider skin that maps each model's available reasoning efforts onto a 0–30 visual intensity scale, with synchronized portraits, background, and interface colors.",
       "summaryZh": "自适应推理等级滑块皮肤，将当前模型可用档位映射到 0–30 视觉强度，并同步人物、背景和界面配色。",
       "category": "theme",
-      "language": "TypeScript",
+      "language": "JavaScript",
       "license": null,
-      "stars": 228,
-      "pushedAt": "2026-08-21T03:23:04.000Z",
+      "stars": 318,
+      "pushedAt": "2026-10-22T19:12:41.000Z",
       "repoUrl": "https://github.com/kingOfSoySauce/dsh-liang-skin",
-      "npmPackage": null,
-      "installKind": "github",
-      "install": "dsh plugin --profile web add github:kingOfSoySauce/dsh-liang-skin",
+      "npmPackage": "@leon___/dsh-client-liang-intensity-skin",
+      "installKind": "npm",
+      "install": "dsh plugin --profile web add @leon___/dsh-client-liang-intensity-skin",
       "installable": true,
       "installOptions": [
+        {
+          "label": "npm",
+          "cmd": "dsh plugin --profile web add @leon___/dsh-client-liang-intensity-skin",
+          "note": "Resolves a published tarball rather than cloning the repository, and installs without any extra setup. Swap `web` for your profile name if you run another one."
+        },
         {
           "label": "GitHub",
           "cmd": "dsh plugin --profile web add github:kingOfSoySauce/dsh-liang-skin",
@@ -1856,7 +2135,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -1873,7 +2154,7 @@
       "category": "theme",
       "language": "TypeScript",
       "license": "NOASSERTION",
-      "stars": 116,
+      "stars": 127,
       "pushedAt": "2026-08-19T10:14:58.000Z",
       "repoUrl": "https://github.com/GGBond2424648901/deep-whale-day-night-theme",
       "npmPackage": null,
@@ -1887,8 +2168,16 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": null,
+        "status": "untried",
+        "requires": {
+          "@deepseek-ai/dsh-client-ui-theme": ">=0.1.0-rc.5 <0.2.0"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -1905,8 +2194,8 @@
       "category": "theme",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 183,
-      "pushedAt": "2026-09-24T08:25:22.000Z",
+      "stars": 253,
+      "pushedAt": "2026-10-18T07:59:43.000Z",
       "repoUrl": "https://github.com/RevolutionLA/dsh-dream-skin",
       "npmPackage": "dsh-dream-skin",
       "installKind": "npm",
@@ -1925,7 +2214,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -1944,8 +2235,8 @@
       "category": "market",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 69,
-      "pushedAt": "2026-09-30T20:35:08.000Z",
+      "stars": 73,
+      "pushedAt": "2026-10-26T19:46:14.000Z",
       "repoUrl": "https://github.com/ZASENJC/dsh-plugins-store",
       "npmPackage": null,
       "installKind": "github",
@@ -1959,10 +2250,10 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
-      "blockedBuilds": [
-        "esbuild@0.28.2"
-      ],
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
+      "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
       ],
@@ -1980,8 +2271,8 @@
       "category": "market",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 167,
-      "pushedAt": "2026-09-26T21:14:33.000Z",
+      "stars": 184,
+      "pushedAt": "2026-10-21T19:14:07.000Z",
       "repoUrl": "https://github.com/bradeGithub/DSH-Plugins-Marketplace",
       "npmPackage": null,
       "installKind": "github",
@@ -1995,7 +2286,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-26T22:13:20.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface",
@@ -2015,7 +2308,7 @@
       "category": "market",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 103,
+      "stars": 104,
       "pushedAt": "2026-08-22T05:36:20.000Z",
       "repoUrl": "https://github.com/Sanqi-normal/dsh-webui-market-plugin",
       "npmPackage": "@sanqi-normal/dsh-webui-market-plugin",
@@ -2034,8 +2327,17 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": "incompatible",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": {
+        "version": "0.5.4",
+        "status": "passed",
+        "requires": {
+          "@deepseek-ai/dsh-client-runtime": ">=0.0.1-rc.2 <0.2.0-0 || >=0.1.0-rc.2 <0.2.0-0",
+          "@deepseek-ai/dsh-client-ui-slots": ">=0.0.1-rc.2 <0.2.0-0 || >=0.1.0-rc.2 <0.2.0-0"
+        }
+      },
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -2054,7 +2356,7 @@
       "category": "dev",
       "language": "TypeScript",
       "license": "MIT",
-      "stars": 325,
+      "stars": 323,
       "pushedAt": "2026-09-12T13:58:15.000Z",
       "repoUrl": "https://github.com/hust-open-atom-club/oh-dsh",
       "npmPackage": null,
@@ -2068,8 +2370,10 @@
           "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
         }
       ],
-      "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheck": null,
+      "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -2088,7 +2392,7 @@
       "category": "dev",
       "language": "Python",
       "license": "MIT",
-      "stars": 72,
+      "stars": 75,
       "pushedAt": "2026-08-19T08:42:44.000Z",
       "repoUrl": "https://github.com/Jayden-X-L/forkprobe",
       "npmPackage": null,
@@ -2103,7 +2407,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -2120,10 +2426,10 @@
       "summary": "Ecosystem infrastructure: a thin browser console for managing official repository plugins (zero patches) plus a make-dsh-plugin skill for guided plugin development.",
       "summaryZh": "插件生态基建：浏览器面板管理官方 repository 插件（0 patch）+ make-dsh-plugin 插件开发引导技能。",
       "category": "dev",
-      "language": "TypeScript",
+      "language": "JavaScript",
       "license": "MIT",
-      "stars": 58,
-      "pushedAt": "2026-09-21T10:04:06.000Z",
+      "stars": 59,
+      "pushedAt": "2026-10-23T08:03:33.000Z",
       "repoUrl": "https://github.com/vlln/plugin-registry",
       "npmPackage": null,
       "installKind": "github",
@@ -2137,7 +2443,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -2154,7 +2462,7 @@
       "category": "dev",
       "language": "TypeScript",
       "license": null,
-      "stars": 66,
+      "stars": 70,
       "pushedAt": "2026-08-14T09:45:21.000Z",
       "repoUrl": "https://github.com/forrestchang/dsh-multica-runtime",
       "npmPackage": null,
@@ -2169,7 +2477,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -2188,8 +2498,8 @@
       "category": "workflow",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 0,
-      "pushedAt": "2026-09-25T13:31:20.000Z",
+      "stars": 1,
+      "pushedAt": "2026-10-19T15:23:58.000Z",
       "repoUrl": "https://github.com/GooDAnDReaDY/dsh-github-ops",
       "npmPackage": "@goodandready/dsh-github-ops",
       "installKind": "npm",
@@ -2209,6 +2519,8 @@
       ],
       "installCheck": null,
       "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
@@ -2227,8 +2539,8 @@
       "category": "fun",
       "language": "TypeScript",
       "license": "BSD-3-Clause",
-      "stars": 634,
-      "pushedAt": "2026-09-18T23:09:29.000Z",
+      "stars": 676,
+      "pushedAt": "2026-10-17T12:35:00.000Z",
       "repoUrl": "https://github.com/Nagi-ovo/dsh-ads",
       "npmPackage": "@nagi-ovo/dsh-ads",
       "installKind": "npm",
@@ -2247,7 +2559,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [],
       "inRegistry": true,
@@ -2264,8 +2578,8 @@
       "category": "fun",
       "language": "JavaScript",
       "license": "MIT",
-      "stars": 339,
-      "pushedAt": "2026-08-31T09:40:54.000Z",
+      "stars": 377,
+      "pushedAt": "2026-10-22T02:10:14.000Z",
       "repoUrl": "https://github.com/vlln/whale-girl",
       "npmPackage": "whale-girl",
       "installKind": "npm",
@@ -2284,7 +2598,9 @@
         }
       ],
       "installCheck": "passed",
-      "installCheckedAt": "2026-09-19T21:44:00.000Z",
+      "installCheckedAt": "2026-10-29T23:51:37.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
       "blockedBuilds": [],
       "riskFlags": [
         "terminal surface"
