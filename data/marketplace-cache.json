@@ -1,6 +1,6 @@
 {
-  "total": 9909,
-  "count": 63,
+  "total": 16364,
+  "count": 64,
   "results": [
     {
       "fullName": "dsh-market/dsh-market",
@@ -2291,6 +2291,47 @@
       ],
       "inRegistry": true,
       "url": "https://dshmarketplace.dev/plugins/vlln-whale-girl"
+    },
+    {
+      "fullName": "lijiaqi-AI-Product-Manager/dsh-agent-compare",
+      "name": "dsh-agent-compare",
+      "owner": "lijiaqi-AI-Product-Manager",
+      "repo": "dsh-agent-compare",
+      "subpath": null,
+      "summary": "同一需求，两版真跑，体验后审查采用。Two live builds for one task in DeepSeek Harness.",
+      "summaryZh": null,
+      "category": "workflow",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 25,
+      "pushedAt": "2026-11-03T20:06:46.000Z",
+      "repoUrl": "https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare",
+      "npmPackage": "dsh-agent-compare",
+      "installKind": "npm",
+      "install": "dsh plugin --profile web add dsh-agent-compare",
+      "installable": true,
+      "installOptions": [
+        {
+          "label": "npm",
+          "cmd": "dsh plugin --profile web add dsh-agent-compare",
+          "note": "Resolves a published tarball rather than cloning the repository, and installs without any extra setup. Swap `web` for your profile name if you run another one."
+        },
+        {
+          "label": "GitHub",
+          "cmd": "dsh plugin --profile web add github:lijiaqi-AI-Product-Manager/dsh-agent-compare",
+          "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
+        }
+      ],
+      "installCheck": "passed",
+      "installCheckedAt": "2026-11-04T01:10:23.000Z",
+      "installCheckDsh": "0.2.1-rc.5",
+      "installFallback": null,
+      "blockedBuilds": [],
+      "riskFlags": [
+        "terminal surface"
+      ],
+      "inRegistry": false,
+      "url": "https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare"
     }
   ]
 }

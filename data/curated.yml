@@ -80,6 +80,7 @@ categories:
       - repo: icetomoyo/dsh_workflow
       - repo: btspoony/mstar-harness
       - repo: titanwings/dsh-automation
+      - repo: lijiaqi-AI-Product-Manager/dsh-agent-compare
 
   - name: Skills
     slug: skill
