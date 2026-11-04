@@ -36,6 +36,7 @@ categories:
   - name: Models & Providers
     slug: model
     plugins:
+      - repo: tangyixiao/dsh-workbuddy-connect-community
       - repo: anysearch-team/anysearch-dsh
       - repo: HanaAyane/dsh-reasoning-effort
       - repo: AITabby/dockyard-dsh

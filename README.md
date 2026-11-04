@@ -85,6 +85,7 @@ Essential plugins recommended for new DSH users:
 
 ### Models & Providers
 
+- [dsh-workbuddy-connect-community](https://github.com/tangyixiao/dsh-workbuddy-connect-community) — Community-maintained WorkBuddy and WorkBuddy AI model provider using local desktop sign-in, with model discovery and credit display. Declares DSH 0.2.1-rc.2 and rc.3 compatibility, with a CN compatibility layer that differs from the functy23 fork.
 - [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) — AnySearch-powered real-time web and vertical search provider for DeepSeek Harness. ★0.4k
 - [dsh-reasoning-effort](https://github.com/HanaAyane/dsh-reasoning-effort) — DSH适用的Codex风格的思考强度滑块，以及大肥鱼跑步滑块。Codex-style model and reasoning-effort slider for DeepSeek Harness ★0.2k
 - [dockyard-dsh](https://github.com/AITabby/dockyard-dsh) — A macOS-only native account-pool and provider plugin for DeepSeek Harness. ★0.1k

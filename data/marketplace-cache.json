@@ -1,6 +1,6 @@
 {
   "total": 9909,
-  "count": 63,
+  "count": 64,
   "results": [
     {
       "fullName": "dsh-market/dsh-market",
@@ -2291,6 +2291,40 @@
       ],
       "inRegistry": true,
       "url": "https://dshmarketplace.dev/plugins/vlln-whale-girl"
+    },
+    {
+      "fullName": "tangyixiao/dsh-workbuddy-connect-community",
+      "name": "dsh-workbuddy-connect-community",
+      "owner": "tangyixiao",
+      "repo": "dsh-workbuddy-connect-community",
+      "subpath": null,
+      "summary": "Community-maintained WorkBuddy and WorkBuddy AI model provider using local desktop sign-in, with model discovery and credit display. Declares DSH 0.2.1-rc.2 and rc.3 compatibility, with a CN compatibility layer that differs from the functy23 fork.",
+      "summaryZh": "复用本机桌面登录的 WorkBuddy 与 WorkBuddy AI 模型提供器社区分叉，提供模型发现和额度显示。声明兼容 DSH 0.2.1-rc.2 和 rc.3，CN 兼容层与 functy23 的分叉不同。",
+      "category": "model",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 0,
+      "pushedAt": "2026-10-21T14:56:28.000Z",
+      "repoUrl": "https://github.com/tangyixiao/dsh-workbuddy-connect-community",
+      "npmPackage": null,
+      "installKind": "github",
+      "install": "dsh plugin --profile web add github:tangyixiao/dsh-workbuddy-connect-community",
+      "installable": true,
+      "installOptions": [
+        {
+          "label": "GitHub",
+          "cmd": "dsh plugin --profile web add github:tangyixiao/dsh-workbuddy-connect-community",
+          "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
+        }
+      ],
+      "installCheck": null,
+      "installCheckedAt": null,
+      "installCheckDsh": null,
+      "installFallback": null,
+      "blockedBuilds": [],
+      "riskFlags": [],
+      "inRegistry": true,
+      "url": "https://github.com/tangyixiao/dsh-workbuddy-connect-community"
     }
   ]
 }
