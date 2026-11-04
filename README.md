@@ -108,7 +108,7 @@ Essential plugins recommended for new DSH users:
 - [dsh-livedocs](https://github.com/sogoodayo/dsh-livedocs) — DSH 实时库文档：写代码前自动拉取项目安装版本的官方文档，消灭幻觉 API。零配置零 Key。Version-pinned live library docs for DeepSeek Harness — kill hallucinated APIs
 - [dsh-plugin-notify](https://github.com/GooDAnDReaDY/dsh-plugin-notify) — DSH plugin: audio chimes, cross-session toasts, desktop push, and IM webhooks for turn completion, errors, and approvals.
 - [qiaomu-rss-dsh](https://github.com/joeseesun/qiaomu-rss-dsh) — 在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness ★0k
-- [dsh-system1](https://github.com/exoticknight/dsh-system1) — Connect multiple decision providers and models through one interface: Jev via TypeSafe, Clef via Cloudflare, Drex via Nace, self-hosted Laya, and compatible custom providers. Agents and plugins can classify content, filter candidates, score against criteria, or locate objects in images, then use structured results in their workflows.
+- [dsh-system1](https://github.com/exoticknight/dsh-system1) — Connects TypeSafe/Jev, Cloudflare/Clef, Nace/Drex, meraGPT/Decider, self-hosted Laya, and custom decision providers through one interface for agent and plugin classification, filtering, scoring, and image-object localization with structured results.
 
 ### Vision & Multimodal
 
