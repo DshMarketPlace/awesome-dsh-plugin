@@ -1,6 +1,6 @@
 {
-  "total": 9909,
-  "count": 63,
+  "total": 10971,
+  "count": 64,
   "results": [
     {
       "fullName": "dsh-market/dsh-market",
@@ -2291,6 +2291,38 @@
       ],
       "inRegistry": true,
       "url": "https://dshmarketplace.dev/plugins/vlln-whale-girl"
+    },
+    {
+      "fullName": "exoticknight/dsh-system1",
+      "name": "dsh-system1",
+      "owner": "exoticknight",
+      "repo": "dsh-system1",
+      "subpath": null,
+      "summary": "Connects TypeSafe/Jev, Cloudflare/Clef, Nace/Drex, meraGPT/Decider, self-hosted Laya, and custom decision providers through one interface for agent and plugin classification, filtering, scoring, and image-object localization with structured results.",
+      "summaryZh": "通过统一接口接入 TypeSafe/Jev、Cloudflare/Clef、Nace/Drex、meraGPT/Decider、本地 Laya 与自定义决策提供商，支持 Agent 和插件进行分类、筛选、评分与图片目标定位，并返回结构化结果。",
+      "category": null,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "stars": 0,
+      "pushedAt": "2026-11-01T18:19:33Z",
+      "repoUrl": "https://github.com/exoticknight/dsh-system1",
+      "npmPackage": null,
+      "installKind": "github",
+      "install": "dsh plugin --profile web add github:exoticknight/dsh-system1",
+      "installable": true,
+      "installOptions": [
+        {
+          "label": "GitHub",
+          "cmd": "dsh plugin --profile web add github:exoticknight/dsh-system1",
+          "note": "Installing from GitHub runs the project's build script, which pnpm blocks until you allowlist it — run the command once and pnpm prints the exact key to add under `allowBuilds` in ~/.dsh/profiles/web/pnpm-workspace.yaml."
+        }
+      ],
+      "installCheck": null,
+      "installCheckedAt": null,
+      "blockedBuilds": [],
+      "riskFlags": [],
+      "inRegistry": false,
+      "url": "https://github.com/exoticknight/dsh-system1"
     }
   ]
 }

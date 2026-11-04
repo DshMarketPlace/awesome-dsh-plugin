@@ -4,7 +4,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![浏览市场](https://img.shields.io/badge/浏览-DSH%20插件市场-blue?style=flat-square)](https://dshmarketplace.dev/zh)
-[![插件数量](https://img.shields.io/badge/插件-9909+-success?style=flat-square)](https://dshmarketplace.dev/zh)
+[![插件数量](https://img.shields.io/badge/插件-10971+-success?style=flat-square)](https://dshmarketplace.dev/zh)
 [![欢迎PR](https://img.shields.io/badge/PRs-欢迎-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 精选的 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 插件列表，由 [DSH 插件市场](https://dshmarketplace.dev/zh)维护。
@@ -19,7 +19,7 @@
 
 ## 🌟 为什么有这个列表
 
-**DSH 插件市场**索引了完整的 DeepSeek Harness 插件生态 — 目前已收录 9909+ 个插件。
+**DSH 插件市场**索引了完整的 DeepSeek Harness 插件生态 — 目前已收录 10971+ 个插件。
 
 这个 **Awesome 列表**是精选子集：我们人工挑选值得优先尝试的插件。可以理解为"你应该安装的插件"而不是"所有存在的插件"。
 
@@ -29,7 +29,7 @@
 
 ### 浏览完整市场
 
-访问 **[dshmarketplace.dev](https://dshmarketplace.dev/zh)** 探索全部 9909+ 个已索引插件，支持：
+访问 **[dshmarketplace.dev](https://dshmarketplace.dev/zh)** 探索全部 10971+ 个已索引插件，支持：
 - 高级搜索和筛选
 - 安装验证状态
 - 详细插件页面
@@ -108,6 +108,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 - [dsh-livedocs](https://github.com/sogoodayo/dsh-livedocs) — DSH 实时库文档：写代码前自动拉取项目安装版本的官方文档，消灭幻觉 API。零配置零 Key。Version-pinned live library docs for DeepSeek Harness — kill hallucinated APIs
 - [dsh-plugin-notify](https://github.com/GooDAnDReaDY/dsh-plugin-notify) — DSH plugin: audio chimes, cross-session toasts, desktop push, and IM webhooks for turn completion, errors, and approvals.
 - [qiaomu-rss-dsh](https://github.com/joeseesun/qiaomu-rss-dsh) — 在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness ★0k
+- [dsh-system1](https://github.com/exoticknight/dsh-system1) — 通过统一接口接入 TypeSafe/Jev、Cloudflare/Clef、Nace/Drex、meraGPT/Decider、本地 Laya 与自定义决策提供商，支持 Agent 和插件进行分类、筛选、评分与图片目标定位，并返回结构化结果。
 
 ### Vision & Multimodal
 
@@ -181,7 +182,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 
 ## 📚 相关项目
 
-- **[DSH 插件市场](https://github.com/DshMarketPlace/dshmarketplace)** — 完整的 9909+ 插件目录
+- **[DSH 插件市场](https://github.com/DshMarketPlace/dshmarketplace)** — 完整的 10971+ 插件目录
 - **[dsh-plugins-store](https://github.com/DshMarketPlace/dsh-plugins-store)** — 可安装的市场插件
 - **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** — DSH 官方项目
 

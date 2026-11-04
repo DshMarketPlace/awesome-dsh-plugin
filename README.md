@@ -4,7 +4,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Browse Marketplace](https://img.shields.io/badge/Browse-DSH%20Marketplace-blue?style=flat-square)](https://dshmarketplace.dev)
-[![Plugins](https://img.shields.io/badge/plugins-9909+-success?style=flat-square)](https://dshmarketplace.dev)
+[![Plugins](https://img.shields.io/badge/plugins-10971+-success?style=flat-square)](https://dshmarketplace.dev)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 A curated list of useful plugins for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), maintained by [DSH Marketplace](https://dshmarketplace.dev).
@@ -19,7 +19,7 @@ This is our independent recommendation list. The [upstream registry](https://git
 
 ## 🌟 Why This List Exists
 
-**DSH Marketplace** indexes the complete DeepSeek Harness plugin ecosystem — currently tracking 9909+ plugins.
+**DSH Marketplace** indexes the complete DeepSeek Harness plugin ecosystem — currently tracking 10971+ plugins.
 
 This **Awesome List** is a curated subset: we hand-pick plugins worth trying first. Think of it as "the plugins you should actually install" rather than "every plugin that exists."
 
@@ -29,7 +29,7 @@ This **Awesome List** is a curated subset: we hand-pick plugins worth trying fir
 
 ### Browse the Full Marketplace
 
-Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 9909+ indexed plugins with:
+Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 10971+ indexed plugins with:
 - Advanced search and filtering
 - Installation validation status
 - Detailed plugin pages
@@ -108,6 +108,7 @@ Essential plugins recommended for new DSH users:
 - [dsh-livedocs](https://github.com/sogoodayo/dsh-livedocs) — DSH 实时库文档：写代码前自动拉取项目安装版本的官方文档，消灭幻觉 API。零配置零 Key。Version-pinned live library docs for DeepSeek Harness — kill hallucinated APIs
 - [dsh-plugin-notify](https://github.com/GooDAnDReaDY/dsh-plugin-notify) — DSH plugin: audio chimes, cross-session toasts, desktop push, and IM webhooks for turn completion, errors, and approvals.
 - [qiaomu-rss-dsh](https://github.com/joeseesun/qiaomu-rss-dsh) — 在 DeepSeek Harness 中阅读 RSS，与原生 AI 对话伴读文章 | RSS reading with native AI companion for DeepSeek Harness ★0k
+- [dsh-system1](https://github.com/exoticknight/dsh-system1) — Connects TypeSafe/Jev, Cloudflare/Clef, Nace/Drex, meraGPT/Decider, self-hosted Laya, and custom decision providers through one interface for agent and plugin classification, filtering, scoring, and image-object localization with structured results.
 
 ### Vision & Multimodal
 
@@ -181,7 +182,7 @@ We welcome plugin submissions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) fo
 
 ## 📚 Related Projects
 
-- **[DSH Marketplace](https://github.com/DshMarketPlace/dshmarketplace)** — The full 9909+ plugin directory
+- **[DSH Marketplace](https://github.com/DshMarketPlace/dshmarketplace)** — The full 10971+ plugin directory
 - **[dsh-plugins-store](https://github.com/DshMarketPlace/dsh-plugins-store)** — Installable marketplace plugin
 - **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** — The official DSH project
 
