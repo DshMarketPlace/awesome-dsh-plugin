@@ -85,6 +85,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 
 ### Models & Providers
 
+- [dsh-workbuddy-connect-community](https://github.com/tangyixiao/dsh-workbuddy-connect-community) — 复用本机桌面登录的 WorkBuddy 与 WorkBuddy AI 模型提供器社区分叉，提供模型发现和额度显示。声明兼容 DSH 0.2.1-rc.2 和 rc.3，CN 兼容层与 functy23 的分叉不同。
 - [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) — 基于 AnySearch 的实时网页与垂直搜索插件，为 DeepSeek Harness 提供搜索工具。 ★0.4k
 - [dsh-reasoning-effort](https://github.com/HanaAyane/dsh-reasoning-effort) — DSH适用的Codex风格的思考强度滑块，以及大肥鱼跑步滑块。Codex-style model and reasoning-effort slider for DeepSeek Harness ★0.2k
 - [dockyard-dsh](https://github.com/AITabby/dockyard-dsh) — A macOS-only native account-pool and provider plugin for DeepSeek Harness. ★0.1k
