@@ -61,6 +61,7 @@ categories:
       - repo: sogoodayo/dsh-livedocs
       - repo: GooDAnDReaDY/dsh-plugin-notify
       - repo: joeseesun/qiaomu-rss-dsh
+      - repo: gongfpp/dsh-cost-voice
 
   - name: Vision & Multimodal
     slug: vision
@@ -128,3 +129,5 @@ categories:
     plugins:
       - repo: Nagi-ovo/dsh-ads
       - repo: vlln/whale-girl
+      - repo: gongfpp/dsh-thanks-carl
+      - repo: gongfpp/dsh-novel-fish
