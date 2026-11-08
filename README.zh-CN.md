@@ -72,7 +72,7 @@ dsh plugin --profile web add dshmarketplace-plugin
 ### UI & Experience
 
 - [DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) — 侧边栏完整工作台：内置文件渲染编辑、终端、Git 与子代理，支持三方插件注册新 Tab。 ★4.5k · [详情](https://dshmarketplace.dev/plugins/omdsh-dev-dsh-better-sidebar)
-- [dsh-better-left-sidebar](https://github.com/exoticknight/dsh-better-left-sidebar) — 更清爽、更合理的 DeepSeek Harness 左边栏，支持插件自定义多个小组件。
+- [dsh-better-left-sidebar](https://github.com/exoticknight/dsh-better-left-sidebar) — 分区更清晰的 DeepSeek Harness 左侧栏，内置时钟、余额等小组件。
 - [dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) — Claude Code 风格全屏终端 UI：像素鲸鱼顶栏、实时工作状态行、思考流式展开。 ★5.1k · [详情](https://dshmarketplace.dev/plugins/ccch1mneyyy-dsh-tui)
 - [dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) — Codex 风格的 `@file` 文件引用，输入框里直接搜索并引用工作区文件。 ★0.5k · [详情](https://dshmarketplace.dev/plugins/omdsh-dev-dsh-at-file)
 - [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — DeepSeek Harness 的终端 UI（TUI）。 ★0.3k · [详情](https://dshmarketplace.dev/plugins/huiliyi37-dsh-tianshu-tui)

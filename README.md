@@ -72,7 +72,7 @@ Essential plugins recommended for new DSH users:
 ### UI & Experience
 
 - [DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) — Full sidebar workbench with file rendering and editing, terminal, Git, and subagents; third-party plugins can register new tabs. ★4.5k · [Details](https://dshmarketplace.dev/plugins/omdsh-dev-dsh-better-sidebar)
-- [dsh-better-left-sidebar](https://github.com/exoticknight/dsh-better-left-sidebar) — A cleaner, better-organized DeepSeek Harness sidebar with support for multiple plugin-defined widgets.
+- [dsh-better-left-sidebar](https://github.com/exoticknight/dsh-better-left-sidebar) — A clearer DeepSeek Harness sidebar with separate navigation and conversation regions and built-in widgets.
 - [dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) — Claude Code-style full-screen terminal UI: pixel-whale header, live status line, and streaming thought expansion. ★5.1k · [Details](https://dshmarketplace.dev/plugins/ccch1mneyyy-dsh-tui)
 - [dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) — Codex-style `@file` mentions: search workspace files in the composer and attach their contents to prompts. ★0.5k · [Details](https://dshmarketplace.dev/plugins/omdsh-dev-dsh-at-file)
 - [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — A terminal UI (TUI) for DeepSeek Harness. ★0.3k · [Details](https://dshmarketplace.dev/plugins/huiliyi37-dsh-tianshu-tui)
