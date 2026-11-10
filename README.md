@@ -4,7 +4,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Browse Marketplace](https://img.shields.io/badge/Browse-DSH%20Marketplace-blue?style=flat-square)](https://dshmarketplace.dev)
-[![Plugins](https://img.shields.io/badge/plugins-16364+-success?style=flat-square)](https://dshmarketplace.dev)
+[![Plugins](https://img.shields.io/badge/plugins-9909+-success?style=flat-square)](https://dshmarketplace.dev)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 A curated list of useful plugins for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), maintained by [DSH Marketplace](https://dshmarketplace.dev).
@@ -19,7 +19,7 @@ This is our independent recommendation list. The [upstream registry](https://git
 
 ## 🌟 Why This List Exists
 
-**DSH Marketplace** indexes the complete DeepSeek Harness plugin ecosystem — currently tracking 16364+ plugins.
+**DSH Marketplace** indexes the complete DeepSeek Harness plugin ecosystem — currently tracking 9909+ plugins.
 
 This **Awesome List** is a curated subset: we hand-pick plugins worth trying first. Think of it as "the plugins you should actually install" rather than "every plugin that exists."
 
@@ -29,7 +29,7 @@ This **Awesome List** is a curated subset: we hand-pick plugins worth trying fir
 
 ### Browse the Full Marketplace
 
-Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 16364+ indexed plugins with:
+Visit **[dshmarketplace.dev](https://dshmarketplace.dev)** to explore all 9909+ indexed plugins with:
 - Advanced search and filtering
 - Installation validation status
 - Detailed plugin pages
@@ -125,7 +125,6 @@ Essential plugins recommended for new DSH users:
 - [dsh_workflow](https://github.com/icetomoyo/dsh_workflow) — UltraCode-style multi-agent orchestration: a generatable, savable, governable, observable, resumable workflow layer. ★0.1k · [Details](https://dshmarketplace.dev/plugins/icetomoyo-dsh-workflow)
 - [mstar-harness](https://github.com/btspoony/mstar-harness) — Skill-driven harness/loop engineering workflow agent plugin. ★0.1k · [Details](https://dshmarketplace.dev/plugins/btspoony-mstar-harness)
 - [dsh-automation](https://github.com/titanwings/dsh-automation) — Scheduled coding runs in fresh agent sessions with auditable history. ★0.1k · [Details](https://dshmarketplace.dev/plugins/titanwings-dsh-automation)
-- [dsh-agent-compare](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare) — 同一需求，两版真跑，体验后审查采用。Two live builds for one task in DeepSeek Harness. ★0k
 
 ### Skills
 
@@ -182,7 +181,7 @@ We welcome plugin submissions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) fo
 
 ## 📚 Related Projects
 
-- **[DSH Marketplace](https://github.com/DshMarketPlace/dshmarketplace)** — The full 16364+ plugin directory
+- **[DSH Marketplace](https://github.com/DshMarketPlace/dshmarketplace)** — The full 9909+ plugin directory
 - **[dsh-plugins-store](https://github.com/DshMarketPlace/dsh-plugins-store)** — Installable marketplace plugin
 - **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** — The official DSH project
 
