@@ -53,6 +53,7 @@ categories:
   - name: Tools & Capabilities
     slug: tools
     plugins:
+      - repo: outsmall/dsh-plugin-xc-compliance
       - repo: superdesigndev/treg
       - repo: Lum1104/dsh-browser
       - repo: zhaoolee/notes
